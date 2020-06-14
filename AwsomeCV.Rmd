@@ -1,0 +1,155 @@
+---
+name: Tanya
+surname: Strydom
+profilepic: "profile.png"
+#position: "Professor"
+#address: "School of Physics & Chemistry, École Normale Supérieure"
+phone: +46 76 567 8299
+www: "tanyadoesscience.com"
+email: "tanya.strydom@icloud.com"
+twitter: TanyaS_08
+github: TanyaS08
+#orcid: 0000-0001-6067-1349
+#google scholar: AkDd5u8AAAAJ
+headcolor: 414141 # use black color
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+#csl: ecology.csl # change this if you want to use other citation styles
+#bibliography_published: "Published.bib" # use separate .bib files and assign each of them a unique key: bibliography_*
+#bibliography_underreview: "Under review.bib"
+#bibliography_inprep: "In prep.bib"
+#bibliography_presentations: "Presentations.bib"
+#nocite: '@*' # don't change this if you want to print out all the refs
+    
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae);library(tibble);library(rorcid)
+```
+
+# Research Interests
+
+microclimates; species interactions; functional traits; ecoinformatics
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~Advisor, ~ Year, ~ Institution, ~ Where,
+  "Master of Science: Ecology and Biodiversity","Advisor: Dr K. Hylander", "2018-20", "Stockholm University", "Stockholm, Sweden",
+  "Master of Science: Ecology and Biodiversity","Thesis: Thesis: Declines and increases in northern and southern plant populations after changes in the microclimate", "2018-20", "Stockholm University", "Stockholm, Sweden",
+  "Bachelor of Science (Honours): Plant Sciences","Advisor: Dr P.C. le Roux", "2017", "University of Pretoria", "Pretoria, South Africa",
+  "Bachelor of Science (Honours): Plant Sciences","Thesis: Thesis: Bush encroachment in South Africa’s montane grasslands: the impact of Leucosidea sericea on microclimate and vegetation", "2017", "University of Pretoria", "Pretoria, South Africa",
+  "Bachelor of Science: Ecology", NA, "2014-16", "University of Pretoria", "Pretoria, South Africa"
+) %>% 
+  detailed_entries(what=Degree, when=Year, with=Institution, where=Where, why=Advisor)
+```
+
+# Research Experience
+
+```{r}
+tribble(
+  ~ Project, ~Supervisor, ~Description, ~ Year,
+  "Plant functional trait responses to elevation and fire","V. Vandvik, PhD from the University of Bergen and B. Enquist, PhD from Arizona University" ,"Attended the 5th Plants Functional Traits Course in Peru. Focused on experimental design, data collection and curation, and report writing, all within a collaborative work environment.", "2020",
+  "Plant vital rates along microclimate gradients.", "K. Hylander, PhD","Masters degree research project which focused on the variation of plant population vital rates along microclimate gradients and the role of historic climatic conditions.", "2019-20",
+  "Plant-pollinator interactions in different microsites", "J. Ehrlén, PhD and A.Tack, PhD", "A Masters level course research project. Gained experience in experimental design and hypothesis formulation.", "2019",
+  "The impact of an encroaching species on vegetation and microclimate", "P. le Roux, PhD","Honours degree research project. Research focused on the concepts of biotic interactions, ecosystem engineering and habitat modification.", "2017") %>% 
+  detailed_entries(with=Project, when=Year, why=Description, what = Supervisor)
+
+
+```
+
+# Other Skills
+
+```{r}
+tribble(
+  ~ Project, ~Supervisor,
+  "Statistical Analysis","generalized mixed-effect modelling; mulitvariate analysis; Bayesian analysis" ,
+  "Academic Writing", "assessed at various levels; literature reviews; research proposals; research reports; popular articles",
+  "Oral Communication", "masters level course; presented various settings",
+  "Peer Review", "assisted (PLoS ONE, 2018); second-round reviewer (Plant Ecology, 2019)",
+  "Image Analysis", "ImageJ; sAdobe Photoshop",
+  "Spatial Analysis", "honours level course focused on spatial analysis in ecology; ArcGIS; Maxent",
+  "Language Skills", "English and Afrikaans as a native speaker; conversational in German") %>% 
+  detailed_entries(with=Project, what = Supervisor)
+
+
+```
+
+# Written Works
+
+## PUBLICATIONS
+```{r}
+
+library(dplyr)
+scholar::get_publications("AkDd5u8AAAAJ", flush = TRUE) %>% 
+  arrange(desc(year)) %>%
+  detailed_entries(
+    what = title,
+    when = year,
+    with = author,
+    where = journal
+  )
+
+```
+
+## MANUSCRIPTS UNDER REVIEW
+
+```{r}
+tribble(
+  ~title, ~year, ~author,
+  'International scientists need better support during global emergencies', '2020', 'S Cotner, B.J Enquist, J Chacon, B Maitner, W Farfan-Rios, T Strydom...') %>% 
+  detailed_entries(
+    what = title,
+    when = year,
+    with = author
+  )
+```
+
+## POPULAR ARTICLES
+
+```{r}
+tribble(
+  ~title, ~year, ~author, ~journal,
+  'International scientists need better support during global emergencies', '2020', 'S Cotner, B.J Enquist, J Chacon, B Maitner, W Farfan-Rios, T Strydom...', 'Times Higher Education') %>% 
+  detailed_entries(
+    what = title,
+    when = year,
+    with = author,
+    where = journal
+  )
+```
+
+# Funding and Awards
+
+```{r}
+tribble(
+  ~Institution, ~Award, ~Year,
+  'Awarded by: University of Pretoria',  "Qualified for the UP Postgraduate Masters Research Bursary.", "2018",
+  'Awarded by: University of Pretoria',  "Awarded the 3rd year Undergraduate Mentorship Bursary.", "2016"
+) %>% 
+  detailed_entries(
+    what = Institution,
+    with = Award, 
+    when = Year
+  )
+```
+
+# References
+
+```{r}
+tribble(
+  ~Name, ~Title, ~Contact, ~Number,
+  'Peter C. le Roux, Ph.D.',  "Assistant professor of Ecology and Biodiversity, University of Pretoria", "peter.leroux@up.ac.za", "+27 (0)12 420 6761",
+  'Kristoffer Hylander, Ph.D.',  "Professor of Ecolgy,  Department of Ecology, Environment and Plant Sciences, Stockholm University", "kristoffer.hylander@su.se", NA,
+  'Sehoya Cotner, Ph.D.',  "Professor of Biology Teaching and Learning, University of Minnesota", "sehoya@umn.edu", "+1 (612) 626 2385"
+) %>% 
+  detailed_entries(
+    where = Contact,
+    with = Name, 
+    what = Title,
+    when = Number
+  )
+```
