@@ -52,8 +52,11 @@ tribble(
 ```{r}
 tribble(
   ~ Project, ~Supervisor, ~Description, ~ Year,
-  "Plant functional trait responses to elevation and fire","V. Vandvik, PhD from the University of Bergen and B. Enquist, PhD from Arizona University" ,"Attended the 5th Plants Functional Traits Course in Peru. Focused on experimental design, data collection and curation, and report writing, all within a collaborative work environment.", "2020",
-  "Plant vital rates along microclimate gradients.", "K. Hylander, PhD","Masters degree research project which focused on the variation of plant population vital rates along microclimate gradients and the role of historic climatic conditions.", "2019-20",
+  "Plant functional trait responses to elevation and fire","V. Vandvik, PhD and B.J. Enquist, PhD", "Attended the 5th Plants Functional Traits Course in Peru co-hosted by the Univesity of Bergen and Arizona University.", "2020",
+  "Plant functional trait responses to elevation and fire","V. Vandvik, PhD and B.J. Enquist, PhD", "Theory on plant functional traits and their relationships with broader ecological processes.", "2020",
+  "Plant functional trait responses to elevation and fire","V. Vandvik, PhD and B.J. Enquist, PhD", "Practical elements include: experimental design, data collection and curation, and report writing.", "2020",
+  "Plant vital rates along microclimate gradients.", "K. Hylander, PhD","Masters degree research project.", "2019-20",
+  "Plant vital rates along microclimate gradients.", "K. Hylander, PhD","Focused on the variation of plant population vital rates along microclimate gradients and the role of historic climatic conditions.", "2019-20",
   "Plant-pollinator interactions in different microsites", "J. Ehrlén, PhD and A.Tack, PhD", "A Masters level course research project. Gained experience in experimental design and hypothesis formulation.", "2019",
   "The impact of an encroaching species on vegetation and microclimate", "P. le Roux, PhD","Honours degree research project. Research focused on the concepts of biotic interactions, ecosystem engineering and habitat modification.", "2017") %>% 
   detailed_entries(with=Project, when=Year, why=Description, what = Supervisor)
