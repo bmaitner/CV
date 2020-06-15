@@ -57,7 +57,7 @@ tribble(
   "Plant vital rates along microclimate gradients.", "K. Hylander, PhD","Focused on the variation of plant population vital rates along microclimate gradients and the role of historic climatic conditions.", "2019-20",
   #For interactions
   "Plant-pollinator interactions in different microsites", "J. Ehrlén, PhD and A. Tack, PhD", "A Masters level course research project.", "2019",
-  "Plant-pollinator interactions in different microsites", "J. Ehrlén, PhD and A.Tack, PhD", "Independently worked on hypothesis formulation and experimental design.", "2019",
+  "Plant-pollinator interactions in different microsites", "J. Ehrlén, PhD and A. Tack, PhD", "Independently worked on hypothesis formulation and experimental design.", "2019",
     #For marion
     "Changes in plant functional traits at fine-scales", "P.C. le Roux, PhD", "Collecting and processing plant functional traits on sub-Antarctic Marion Island.", "2018",
   "Changes in plant functional traits at fine-scales", "P.C. le Roux, PhD", "Research focused on looking at changes in plant functional traits along microclimate gradients.", "2018",
