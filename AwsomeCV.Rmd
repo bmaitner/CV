@@ -14,12 +14,8 @@ github: TanyaS08
 headcolor: 414141 # use black color
 date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv
-#csl: ecology.csl # change this if you want to use other citation styles
-#bibliography_published: "Published.bib" # use separate .bib files and assign each of them a unique key: bibliography_*
-#bibliography_underreview: "Under review.bib"
-#bibliography_inprep: "In prep.bib"
-#bibliography_presentations: "Presentations.bib"
-#nocite: '@*' # don't change this if you want to print out all the refs
+csl: ecology.csl # change this if you want to use other citation styles
+nocite: '*@' # don't change this if you want to print out all the refs
     
 ---
 
@@ -38,13 +34,13 @@ microclimates; species interactions; functional traits; ecoinformatics
 library(tibble)
 tribble(
   ~ Degree, ~Advisor, ~ Year, ~ Institution, ~ Where,
-  "Master of Science: Ecology and Biodiversity","Advisor: Dr K. Hylander", "2018-20", "Stockholm University", "Stockholm, Sweden",
+  "Master of Science: Ecology and Biodiversity","Advisor: K. Hylander, PhD", "2018-20", "Stockholm University", "Stockholm, Sweden",
   "Master of Science: Ecology and Biodiversity","Thesis: Thesis: Declines and increases in northern and southern plant populations after changes in the microclimate", "2018-20", "Stockholm University", "Stockholm, Sweden",
-  "Bachelor of Science (Honours): Plant Sciences","Advisor: Dr P.C. le Roux", "2017", "University of Pretoria", "Pretoria, South Africa",
+  "Bachelor of Science (Honours): Plant Sciences","Advisor: P.C. le Roux, PhD", "2017", "University of Pretoria", "Pretoria, South Africa",
   "Bachelor of Science (Honours): Plant Sciences","Thesis: Thesis: Bush encroachment in South Africa’s montane grasslands: the impact of Leucosidea sericea on microclimate and vegetation", "2017", "University of Pretoria", "Pretoria, South Africa",
   "Bachelor of Science: Ecology", NA, "2014-16", "University of Pretoria", "Pretoria, South Africa"
 ) %>% 
-  detailed_entries(what=Degree, when=Year, with=Institution, where=Where, why=Advisor)
+  detailed_entries(with=Degree, when=Year, what=Institution, where=Where, why=Advisor)
 ```
 
 # Research Experience
@@ -52,13 +48,19 @@ tribble(
 ```{r}
 tribble(
   ~ Project, ~Supervisor, ~Description, ~ Year,
+  #For PFTC
   "Plant functional trait responses to elevation and fire","V. Vandvik, PhD and B.J. Enquist, PhD", "Attended the 5th Plants Functional Traits Course in Peru co-hosted by the Univesity of Bergen and Arizona University.", "2020",
   "Plant functional trait responses to elevation and fire","V. Vandvik, PhD and B.J. Enquist, PhD", "Theory on plant functional traits and their relationships with broader ecological processes.", "2020",
   "Plant functional trait responses to elevation and fire","V. Vandvik, PhD and B.J. Enquist, PhD", "Practical elements include: experimental design, data collection and curation, and report writing.", "2020",
+  #For MSc
   "Plant vital rates along microclimate gradients.", "K. Hylander, PhD","Masters degree research project.", "2019-20",
   "Plant vital rates along microclimate gradients.", "K. Hylander, PhD","Focused on the variation of plant population vital rates along microclimate gradients and the role of historic climatic conditions.", "2019-20",
-  "Plant-pollinator interactions in different microsites", "J. Ehrlén, PhD and A.Tack, PhD", "A Masters level course research project. Gained experience in experimental design and hypothesis formulation.", "2019",
-  "The impact of an encroaching species on vegetation and microclimate", "P. le Roux, PhD","Honours degree research project. Research focused on the concepts of biotic interactions, ecosystem engineering and habitat modification.", "2017") %>% 
+  #For interactions
+  "Plant-pollinator interactions in different microsites", "J. Ehrlén, PhD and A.Tack, PhD", "A Masters level course research project.", "2019",
+  "Plant-pollinator interactions in different microsites", "J. Ehrlén, PhD and A.Tack, PhD", "Independently worked on hypothesis formulation and experimental design.", "2019",
+  #Honours
+  "The impact of an encroaching species on vegetation and microclimate", "P.C. le Roux, PhD","Honours degree research project.", "2017",
+  "The impact of an encroaching species on vegetation and microclimate", "P.C. le Roux, PhD","Research focused on the concepts of biotic interactions, ecosystem engineering and habitat modification.", "2017") %>% 
   detailed_entries(with=Project, when=Year, why=Description, what = Supervisor)
 
 
@@ -73,7 +75,7 @@ tribble(
   "Academic Writing", "assessed at various levels; literature reviews; research proposals; research reports; popular articles",
   "Oral Communication", "masters level course; presented various settings",
   "Peer Review", "assisted (PLoS ONE, 2018); second-round reviewer (Plant Ecology, 2019)",
-  "Image Analysis", "ImageJ; sAdobe Photoshop",
+  "Image Analysis", "ImageJ; Adobe Photoshop",
   "Spatial Analysis", "honours level course focused on spatial analysis in ecology; ArcGIS; Maxent",
   "Language Skills", "English and Afrikaans as a native speaker; conversational in German") %>% 
   detailed_entries(with=Project, what = Supervisor)
@@ -87,47 +89,48 @@ tribble(
 ```{r}
 
 library(dplyr)
+
 scholar::get_publications("AkDd5u8AAAAJ", flush = TRUE) %>% 
-  arrange(desc(year)) %>%
-  detailed_entries(
-    what = title,
-    when = year,
-    with = author,
-    where = journal
-  )
+  distinct(title, .keep_all = TRUE) %>%
+  transmute(bibtype = "Article", author = as.character(author),
+            title = as.character(title),
+            journaltitle = as.character(journal), year, key = row_number()) %>% 
+  mutate(doi = "10.1111/gcb.14904") %>%
+  RefManageR::as.BibEntry() %>% 
+  RefManageR::WriteBib("Published.bib")
+
+bibliography_entries("Published.bib")
 
 ```
 
 ## MANUSCRIPTS UNDER REVIEW
 
 ```{r}
-tribble(
-  ~title, ~year, ~author,
-  'International scientists need better support during global emergencies', '2020', 'S Cotner, B.J Enquist, J Chacon, B Maitner, W Farfan-Rios, T Strydom...') %>% 
-  detailed_entries(
-    what = title,
-    when = year,
-    with = author
-  )
+
+RefManageR::BibEntry(bibtype="Misc", key = "EvoEcol2020", date = "", title = "International scientists need better support during global emergencies", author = "Sonya Geange and Jonathan von Oppen and Sara Middleton and ...", journal = "Ecology and Evolution", pubstate = "submitted") %>%
+  RefManageR::as.BibEntry() %>%
+  RefManageR::WriteBib("Under_Review.bib")
+
+bibliography_entries("Under_Review.bib")
+
 ```
 
 ## POPULAR ARTICLES
 
 ```{r}
-tribble(
-  ~title, ~year, ~author, ~journal,
-  'International scientists need better support during global emergencies', '2020', 'S Cotner, B.J Enquist, J Chacon, B Maitner, W Farfan-Rios, T Strydom...', 'Times Higher Education') %>% 
-  detailed_entries(
-    what = title,
-    when = year,
-    with = author,
-    where = journal
-  )
+
+RefManageR::BibEntry(bibtype="Misc", key = "peru2020", date = "2020", title = "International scientists need better support during global emergencies", author = "Sehoya Cotner and Brian J. Enquist and Julia Chacon and ...", url = "https://www.timeshighereducation.com/blog/international-scientists-need-better-support-during-global-emergencies", journaltitle = "Times Higher Education") %>%
+  RefManageR::as.BibEntry() %>%
+  RefManageR::WriteBib("Popular_Articles.bib")
+
+bibliography_entries("Popular_Articles.bib")
+
 ```
 
 # Funding and Awards
 
 ```{r}
+
 tribble(
   ~Institution, ~Award, ~Year,
   'Awarded by: University of Pretoria',  "Qualified for the UP Postgraduate Masters Research Bursary.", "2018",
@@ -138,6 +141,7 @@ tribble(
     with = Award, 
     when = Year
   )
+
 ```
 
 # References
