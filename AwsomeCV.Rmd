@@ -16,21 +16,24 @@ date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv
 csl: ecology.csl # change this if you want to use other citation styles
 nocite: '*@' # don't change this if you want to print out all the refs
+knit: (function(inputFile, encoding) {
+    rmarkdown::render(inputFile, encoding = encoding, output_dir = "docs/")
+  })
     
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE, echo=FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae);library(tibble);library(rorcid)
 ```
 
 # Research Interests
 
-microclimates; species interactions; functional traits; ecoinformatics
+microclimates; species interactions; functional traits; ecoinformatics; FAIR and open science
 
 # Education
 
-```{r}
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
 library(tibble)
 tribble(
   ~ Degree, ~Advisor, ~ Year, ~ Institution, ~ Where,
@@ -39,13 +42,13 @@ tribble(
   "Bachelor of Science (Honours): Plant Sciences","Advisor: P.C. le Roux, PhD", "2017", "University of Pretoria", "Pretoria, South Africa",
   "Bachelor of Science (Honours): Plant Sciences","Thesis: Thesis: Bush encroachment in South Africa’s montane grasslands: the impact of Leucosidea sericea on microclimate and vegetation", "2017", "University of Pretoria", "Pretoria, South Africa",
   "Bachelor of Science: Ecology", NA, "2014-16", "University of Pretoria", "Pretoria, South Africa"
-) %>% 
+) %>%
   detailed_entries(with=Degree, when=Year, what=Institution, where=Where, why=Advisor)
 ```
 
 # Research Experience
 
-```{r}
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
 tribble(
   ~ Project, ~Supervisor, ~Description, ~ Year,
   #For PFTC
@@ -69,27 +72,71 @@ tribble(
 
 ```
 
-# Other Skills
+\newpage
 
-```{r}
+# Skillset
+
+\begin{cvskills}
+  \cvskill
+    {Statistical Analysis}
+    {generalized and linear mixed-effect models; mulitvariate analysis; Bayesian analysis; primarily using R}
+
+  \cvskill
+    {Spatial Analysis}
+    {spatial analysis in ecology; ArcGIS; Maxent; GBIF}
+    
+  \cvskill
+    {Image Analysis}
+    {ImageJ; Adobe Photoshop}
+    
+  \cvskill
+    {Phylogenetic Analysis}
+    {Extracting and cleaning samples from GenBank; MEGA}
+    
+  \cvskill
+    {Academic Writing}
+    {assessed at various levels; peer-reviewed articles; literature reviews; research proposals; reports; popular articles}
+
+  \cvskill
+    {Oral Communication}
+    {masters level course; presented in various settings}
+
+  \cvskill
+    {Peer Review}
+    {as an assistant (PLoS ONE, 2018); second-round reviewer (Plant Ecology, 2019)}
+
+  \cvskill
+    {Website Development}
+    {content creation; front-end development (Adobe Illustrator/HTML/CSS/R Markdown)}
+    
+  \cvskill
+    {Language Skills}
+    {English and Afrikaans as a native speaker; conversational in German; basic Swedish and Spanish}
+
+\end{cvskills}
+
+# Internships
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+
 tribble(
-  ~ Project, ~Supervisor,
-  "Statistical Analysis","generalized mixed-effect modelling; mulitvariate analysis; Bayesian analysis" ,
-  "Academic Writing", "assessed at various levels; literature reviews; research proposals; research reports; popular articles",
-  "Oral Communication", "masters level course; presented various settings",
-  "Peer Review", "assisted (PLoS ONE, 2018); second-round reviewer (Plant Ecology, 2019)",
-  "Image Analysis", "ImageJ; Adobe Photoshop",
-  "Spatial Analysis", "honours level course focused on spatial analysis in ecology; ArcGIS; Maxent",
-  "Language Skills", "English and Afrikaans as a native speaker; conversational in German") %>% 
-  detailed_entries(with=Project, what = Supervisor)
-
+  ~Institution, ~Title, ~Year, ~Job,
+  'University of Bergen',  "UiB Internship", "2020", "Website development for the Plants Functional Courses website. This included content creation as well as some front end development",
+  'University of Pretoria',  "3rd year Undergraduate Mentorship Program", "2016", "Worked as an assistant within the M. Robertson lab. This included the sorting and identification of pitfall trap samples as well as extracting information from databases"
+) %>% 
+  detailed_entries(
+    what = Institution,
+    with = Title, 
+    when = Year,
+    why = Job
+  )
 
 ```
 
-# Written Works
+# Written Work
 
-## PUBLICATIONS
-```{r}
+## PEER-REVIEWED
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
 
 library(dplyr)
 
@@ -108,7 +155,7 @@ bibliography_entries("Published.bib")
 
 ## MANUSCRIPTS UNDER REVIEW
 
-```{r}
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
 
 RefManageR::BibEntry(bibtype="Misc", key = "EvoEcol2020", date = "", title = "International scientists need better support during global emergencies", author = "Sonya Geange and Jonathan von Oppen and Sara Middleton and Tasha-Leigh Gauthier and Tanya Strydom and Ragnhild Gya and...", journal = "Ecology and Evolution", pubstate = "submitted") %>%
   RefManageR::as.BibEntry() %>%
@@ -120,7 +167,7 @@ bibliography_entries("Under_Review.bib")
 
 ## POPULAR ARTICLES
 
-```{r}
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
 
 RefManageR::BibEntry(bibtype="Misc", key = "peru2020", date = "2020", title = "International scientists need better support during global emergencies", author = "Sehoya Cotner and Brian J. Enquist and Julia Chacon and Brian Maitner and William Farfan-Rios and Sean Michaletz and...", url = "https://www.timeshighereducation.com/blog/international-scientists-need-better-support-during-global-emergencies", journaltitle = "Times Higher Education") %>%
   RefManageR::as.BibEntry() %>%
@@ -132,7 +179,7 @@ bibliography_entries("Popular_Articles.bib")
 
 # Funding and Awards
 
-```{r}
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
 
 tribble(
   ~Institution, ~Award, ~Year,
@@ -149,7 +196,7 @@ tribble(
 
 # References
 
-```{r}
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
 tribble(
   ~Name, ~Title, ~Contact, ~Number,
   'Peter C. le Roux, Ph.D.',  "Assistant professor of Ecology and Biodiversity, University of Pretoria", "peter.leroux@up.ac.za", "+27 (0)12 420 6761",
