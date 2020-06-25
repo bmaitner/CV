@@ -9,7 +9,7 @@ www: "tanyadoesscience.com"
 email: "tanya.strydom@icloud.com"
 twitter: TanyaS_08
 github: TanyaS08
-#orcid: 0000-0001-6067-1349
+orcid: 0000-0001-6067-1349
 #google scholar: AkDd5u8AAAAJ
 headcolor: 414141 # use black color
 date: "`r format(Sys.time(), '%B %Y')`"
@@ -17,7 +17,9 @@ output: vitae::awesomecv
 csl: ecology.csl # change this if you want to use other citation styles
 nocite: '*@' # don't change this if you want to print out all the refs
 knit: (function(inputFile, encoding) {
-    rmarkdown::render(inputFile, encoding = encoding, output_dir = "docs/")
+    rmarkdown::render(inputFile,
+    output_file = "CV_TStrydom",
+     encoding = encoding, output_dir = "docs/")
   })
     
 ---
@@ -29,7 +31,7 @@ library(vitae);library(tibble);library(rorcid)
 
 # Research Interests
 
-microclimates; species interactions; functional traits; ecoinformatics; FAIR and open science
+functional traits; ecoinformatics; microclimates; species interactions; FAIR and open science
 
 # Education
 
@@ -149,19 +151,16 @@ scholar::get_publications("AkDd5u8AAAAJ", flush = TRUE) %>%
   RefManageR::as.BibEntry() %>% 
   RefManageR::WriteBib("Published.bib")
 
-my_dois <- rorcid::identifiers(rorcid::works("0000-0001-6067-1349"))
-pubs <- rcrossref::cr_cn(dois = my_dois, format = "bibtex")
-invisible(lapply(pubs, write, "pubs.bib", append=TRUE))
-
 bibliography_entries("Published.bib")
 
 ```
 
-## MANUSCRIPTS UNDER REVIEW
+## MANUSCRIPTS IN PREP
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
 
-RefManageR::BibEntry(bibtype="Misc", key = "EvoEcol2020", date = "", title = "International scientists need better support during global emergencies", author = "Sonya Geange and Jonathan von Oppen and Sara Middleton and Tasha-Leigh Gauthier and Tanya Strydom and Ragnhild Gya and...", journal = "Ecology and Evolution", pubstate = "submitted") %>%
+RefManageR::BibEntry(bibtype="Misc", key = "EvoEcol2020", date = "", title = "Field courses present opportunities to promote Open Science practices for ECR’s", author = "Sonya Geange and Jonathan von Oppen and Sara Middleton and Tasha-Leigh Gauthier and Tanya Strydom and Ragnhild Gya and...", journal = "Ecology and Evolution", pubstate = "in prep") %>%
+  c(.,RefManageR::BibEntry(bibtype="Misc", key = "HonsMS", date = "", title = "Bush encroachment in South Africa’s montane grasslands: the impact of Leucosidea sericea on microclimate and vegetation", author = "Tanya Strydom and Peter C. le Roux", journal = "", pubstate = "in prep")) %>%
   RefManageR::as.BibEntry() %>%
   RefManageR::WriteBib("Under_Review.bib")
 
