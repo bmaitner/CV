@@ -146,7 +146,7 @@ scholar::get_publications("AkDd5u8AAAAJ", flush = TRUE) %>%
   distinct(title, .keep_all = TRUE) %>%
   transmute(bibtype = "Article", author = as.character(author),
             title = as.character(title),
-            journaltitle = as.character(journal), year, key = row_number()) %>% 
+            journaltitle = as.character(journal), year) %>% 
   mutate(doi = "10.1111/gcb.14904") %>%
   RefManageR::as.BibEntry() %>% 
   RefManageR::WriteBib("Published.bib")
@@ -159,7 +159,7 @@ bibliography_entries("Published.bib")
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
 
-RefManageR::BibEntry(bibtype="Misc", key = "EvoEcol2020", date = "", title = "Field courses present opportunities to promote Open Science practices for ECR’s", author = "Sonya Geange and Jonathan von Oppen and Sara Middleton and Tasha-Leigh Gauthier and Tanya Strydom and Ragnhild Gya and...", journal = "Ecology and Evolution", pubstate = "in prep") %>%
+RefManageR::BibEntry(bibtype="Misc", key = "EvoEcol2020", date = "", title = "Next-generation field courses should intergrate Open Science and online learning", author = "Sonya Geange and Jonathan von Oppen and Sara Middleton and Tasha-Leigh Gauthier and Tanya Strydom and Ragnhild Gya and...", journal = "Ecology and Evolution", pubstate = "in prep") %>%
   c(.,RefManageR::BibEntry(bibtype="Misc", key = "HonsMS", date = "", title = "Bush encroachment in South Africa’s montane grasslands: the impact of Leucosidea sericea on microclimate and vegetation", author = "Tanya Strydom and Peter C. le Roux", journal = "", pubstate = "in prep")) %>%
   RefManageR::as.BibEntry() %>%
   RefManageR::WriteBib("Under_Review.bib")

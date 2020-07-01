@@ -9,7 +9,7 @@ www: "tanyadoesscience.com"
 email: "tanya.strydom@icloud.com"
 twitter: TanyaS_08
 github: TanyaS08
-#orcid: 0000-0001-6067-1349
+orcid: 0000-0001-6067-1349
 #google scholar: AkDd5u8AAAAJ
 headcolor: 414141 # use black color
 date: "`r format(Sys.time(), '%B %Y')`"
@@ -30,7 +30,8 @@ knitr::opts_chunk$set(fig.width=1, echo = FALSE, warning = FALSE, message = FALS
 library(vitae);library(tibble);library(rorcid)
 ```
 
-<div text-align: justify">
+\justify
+
 ##
 ##
 Dear,  
@@ -44,4 +45,3 @@ Best Regards,
 ![](Signature-copy.jpg)  
 Tanya Strydom  
 
-</div>

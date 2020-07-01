@@ -4,21 +4,22 @@ surname: Strydom
 profilepic: "profile.png"
 #position: "Professor"
 #address: "School of Physics & Chemistry, École Normale Supérieure"
-phone: +46 76 567 8299
+phone: +46 (0)76 567 8299
 www: "tanyadoesscience.com"
 email: "tanya.strydom@icloud.com"
 twitter: TanyaS_08
 github: TanyaS08
-#orcid: 0000-0001-6067-1349
+orcid: 0000-0001-6067-1349
 #google scholar: AkDd5u8AAAAJ
 headcolor: 414141 # use black color
 date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv
 csl: ecology.csl # change this if you want to use other citation styles
 nocite: '*@' # don't change this if you want to print out all the refs
+docname: Ecosystem Stability PhD Position
 knit: (function(inputFile, encoding) {
     rmarkdown::render(inputFile,
-    output_file = "CV_TStrydom",
+    output_file = "ApplicationPackage_TS",
      encoding = encoding, output_dir = "docs/")
   })
     
@@ -29,9 +30,50 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae);library(tibble);library(rorcid)
 ```
 
+\vspace{7mm}
+
+Dear Kevin Wilcox,  
+
+This position will examine the drivers of plant community and ecosystem stability at a variety of spatial and temporal scales. The student will learn to incorporate empirical findings into process-based and hierarchical models. Dissertation subject matter is flexible and will depend on student’s interests and affinities. Training and mentorship will be available in study design, ecological sampling, and process-based modeling. Student will be based at the University of Wyoming, and field research will likely be in US grassland ecosystems.
+
+INTRODUCTION
+
+Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test 
+
+RESEARCH INTERESTS
+
+Broadly I am interested in the factors that play a role in shaping communities, more so how species respond to and interact with their environment and neighbouring species. I find this especially interesting at fine scales and am particularly interested in the role of the microclimate and niche construction in shaping species responses and interactions. With regards to species responses I am interested in how these may be manifested as variation in trait expression or as changes in species interactions.
+A topic that I find of particular interest is the role of phenotypic plasticity in allowing a species to persist in an area and as a result how trait expression may vary among different microhabitats or along environmental gradients and how this in turn may alter the importance or nature of species interactions. I am also interested in how we can use this information with regards to improving our understanding species distributions and our ability to model them. However, there are other avenues of research that I have always found interesting and would love to gain more exposure to, such as looking at the bigger, phylogenetic, picture or how pairwise interactions fit together to form networks within the community and the importance of indirect interactions. I believe that improving our understanding of these relationships may prove beneficial in understanding how a species may respond in a changing world.
+I enjoy projects that have a strong field component that find their basis in observational studies as I believe that it is often difficult to emulate the nuances of real world conditions using a strictly experimental approach. However, I do believe that there is value in working with quasi-experimental designs in natural settings. In addition, I would love to work with a project that has a temporal component to it and tracks species/individuals in time not just in space (due to the limited time available for honours and masters projects I have only worked with the spatial component of environmental variation). I have an inclination towards and enjoy the analytical and programming side of research as well and have done multiple statistical courses including a PhD-level course focusing on Bayesian statistics. I am very interested in further developing this skillset by implementing them within an ecoinformatic framework by conducting research that is focused on the building of usable models and furthering the development of ecological theories. I would like to broaden my skillset as a researcher and am interested in potentially applying my research interests in systems that I have previously had limited exposure to, this includes potentially working with plant-animal interactions or solely with animals as a way to expand on the plant-focused research I have previously conducted. 
+ 
+
+TRAINING
+
+
+
+WHY INTERESTED IN THIS POSITION
+
+Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test
+
+CONCLUSIONS
+
+Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test Some test 
+
+\vspace{7mm}
+
+Best Regards, 
+
+\includegraphics{Signature-copy.jpg}
+
+Tanya Strydom  
+
+\newpage
+
+# Curriculum Vitae
+
 # Research Interests
 
-ecoinformatics; functional traits; microclimates; species interactions; FAIR and open science
+functional traits; ecoinformatics; microclimates; species interactions; FAIR and open science
 
 # Education
 
@@ -74,8 +116,6 @@ tribble(
 
 ```
 
-\newpage
-
 # Skillset
 
 \begin{cvskills}
@@ -117,6 +157,8 @@ tribble(
 
 \end{cvskills}
 
+\newpage
+
 # Written Work
 
 ## PEER-REVIEWED
@@ -128,20 +170,26 @@ scholar::get_publications("AkDd5u8AAAAJ", flush = TRUE) %>%
   distinct(title, .keep_all = TRUE) %>%
   transmute(bibtype = "Article", author = as.character(author),
             title = as.character(title),
-            journaltitle = as.character(journal), year, key = row_number()) %>% 
+            journaltitle = as.character(journal), year) %>% 
   mutate(doi = "10.1111/gcb.14904") %>%
   RefManageR::as.BibEntry() %>% 
   RefManageR::WriteBib("Published.bib")
 
-#my_dois <- rorcid::identifiers(rorcid::works("0000-0001-6067-1349"))
-pubs <- rcrossref::cr_cn(dois = "10.5194/egusphere-egu2020-20191", format = "bibtex")
-invisible(lapply(pubs, write, "pubs.bib", append=TRUE))
-
-bibliography_entries("pubs.bib")
+bibliography_entries("Published.bib")
 
 ```
 
 ## MANUSCRIPTS
+
+**Under Review**
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+
+bibliography_entries("Under_Review.bib")
+
+```
+
+**In Prep**
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
 
@@ -174,7 +222,6 @@ tribble(
   )
 
 ```
-
 
 
 # Funding and Awards
