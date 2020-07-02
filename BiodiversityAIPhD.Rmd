@@ -1,0 +1,100 @@
+---
+name: Tanya
+surname: Strydom
+profilepic: "profile.png"
+#position: "Professor"
+#address: "Hodson, United Kingdom"
+#phone: +46 76 567 8299
+www: "tanyadoesscience.com"
+email: "tanya.strydom@icloud.com"
+twitter: TanyaS_08
+github: TanyaS08
+orcid: 0000-0001-6067-1349
+#google scholar: AkDd5u8AAAAJ
+headcolor: 414141 # use black color
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+csl: ecology.csl # change this if you want to use other citation styles
+nocite: '*@' # don't change this if you want to print out all the refs
+docname: PhD application - biodiversity/AI
+knit: (function(inputFile, encoding) {
+    rmarkdown::render(inputFile,
+    output_file = "Strydom",
+    encoding = encoding, output_dir = "docs/")
+  })
+header-includes:
+- \usepackage{pdfpages}
+   
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=1, echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae);library(tibble);library(rorcid)
+```
+
+\vspace{7mm}
+
+Dear, Timothée Poisot
+
+A letter of presentation (up to 1200 words), outlining past research achievements, future research plans, and any relevant information
+
+I came across your call for a PhD fellow on Twitter and after opening up the link, reading the title and description of the fellowship and doing some further looking around on the lab website I found myself getting very excited about the opportunities as well as topics of not only the fellowship specifically but those of the lab as a whole.
+
+I am a recent masters graduate having specialised in ecology and biodiversity and have had a strong focus in ecology throughout my tertiary education. This has been driven by an facination with understanding the interactions between species (particularly plants) as well as their relationship with their environment. My research conducted at the postgraduate level has primarily focused on these topics and has exposed me to the additional concepts of plant functional traits and fine-scale drivers in variation. However, it has also triggered a hunger for wanting to know more, including an understanding of the 'bigger picture' of how interactions fit together within a network or how this would scale-up to bigger ecosystem processes. I felt that although the research I was conducting was intersting and exciting \emph{something} was missing and that I wanted to get more from my research.
+
+I have always had an interest in the analytical and statistical side of research. This has lead me to take various courses throughout my education focusing on statistical analyses within biology and it was at a recent course focusing on Bayesian Statistics when we were working with hierarchical modelling that I came to the realisation that this was what was missing. I wanted to work with data at a 'higher' level and to get more well aquainted with the more advanced and complex modelling approaches we can take to better our understanding of the natural world. Couple this with my strong interest in coding and programming (which up to now has been limited to working in R) and we have a very good match. 
+
+
+
+\vspace{10mm}
+
+Best Regards, 
+
+\includegraphics{Signature-copy.jpg}
+
+Tanya Strydom  
+
+\newpage
+
+\vspace{10mm}
+
+## A statement on Equity, Diversity, and Inclusivity within academia
+
+A statement on Equity, Diversity, and Inclusiveness in academia, of up to 400 words
+
+\vspace{5mm}
+
+## A statement on Open Science
+
+A statement on Open Science of up to 400 words, if possible including quantified or qualified statements about previous or ongoing open practices, or a statement of open philosophy for applicants who have not received the opportunity of working openly
+
+\newpage
+
+## A sample of my Research
+
+A copy of the most representative publication (preprints accepted), alongside a 300 words explanation of why it is exciting
+
+\newpage
+
+\vspace{10mm}
+
+## References
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+tribble(
+  ~Name, ~Title, ~Contact, ~Number,
+  'Peter C. le Roux, Ph.D.',  "Assistant professor of Ecology and Biodiversity, University of Pretoria", "peter.leroux@up.ac.za", "+27 (0)12 420 6761",
+  'Kristoffer Hylander, Ph.D.',  "Professor of Ecolgy,  Department of Ecology, Environment and Plant Sciences, Stockholm University", "kristoffer.hylander@su.se", NA,
+  'Sehoya Cotner, Ph.D.',  "Professor of Biology Teaching and Learning, University of Minnesota", "sehoya@umn.edu", "+1 (612) 626 2385"
+) %>% 
+  detailed_entries(
+    where = Contact,
+    with = Name, 
+    what = Title,
+    when = Number
+  )
+
+#\includepdf[pages=1-26, pagecommand={}, scale = 0.9]{Geange.pdf}
+```
+
+
