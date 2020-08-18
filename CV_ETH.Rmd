@@ -14,13 +14,17 @@ orcid: 0000-0001-6067-1349
 headcolor: 414141 # use black color
 date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv
-csl: ecology.csl # change this if you want to use other citation styles
 nocite: '*@' # don't change this if you want to print out all the refs
 knit: (function(inputFile, encoding) {
-    rmarkdown::render(inputFile,
-    output_file = "CV_TStrydom",
-     encoding = encoding, output_dir = "docs/")
-  })
+     rmarkdown::render(inputFile,
+    output_file = "cv",
+     encoding = encoding, 
+     output_dir = "~/Documents/TanyaDoesScience/static/files");
+     rmarkdown::render(inputFile,
+    output_file = "cv",
+     encoding = encoding, 
+     output_dir = "docs/")
+     })
     
 ---
 
@@ -74,8 +78,8 @@ tribble(
 
 ```
 
-\newpage
 
+\newpage
 # Skillset
 
 \begin{cvskills}
@@ -108,14 +112,58 @@ tribble(
     {as an assistant (PLoS ONE, 2018); second-round reviewer (Plant Ecology, 2019)}
 
   \cvskill
-    {Website Development}
-    {content creation; front-end development (Adobe Illustrator/HTML/CSS/R Markdown)}
-    
-  \cvskill
     {Language Skills}
     {English and Afrikaans as a native speaker; conversational in German; basic Swedish and Spanish}
 
 \end{cvskills}
+
+# Written Work
+
+## PEER-REVIEWED
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+
+library(dplyr)
+
+scholar::get_publications("AkDd5u8AAAAJ", flush = TRUE) %>% 
+  distinct(title, .keep_all = TRUE) %>%
+  transmute(bibtype = "Article", author = as.character(author),
+            title = as.character(title),
+            journaltitle = as.character(journal), year) %>% 
+  mutate(doi = "10.1111/gcb.14904") %>%
+  RefManageR::as.BibEntry() %>% 
+  RefManageR::WriteBib("Published.bib")
+
+bibliography_entries("pubs.bib")
+
+```
+
+## MANUSCRIPTS
+
+**Under Review**
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+
+bibliography_entries("Under_Review.bib")
+
+```
+
+**In Prep**
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+
+bibliography_entries("In_prep.bib")
+
+```
+
+## POPULAR ARTICLES
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+
+bibliography_entries("Popular_Articles.bib")
+
+```
+
+
 
 # Internships
 
@@ -135,50 +183,6 @@ tribble(
 
 ```
 
-# Written Work
-
-## PEER-REVIEWED
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
-
-library(dplyr)
-
-scholar::get_publications("AkDd5u8AAAAJ", flush = TRUE) %>% 
-  distinct(title, .keep_all = TRUE) %>%
-  transmute(bibtype = "Article", author = as.character(author),
-            title = as.character(title),
-            journaltitle = as.character(journal), year) %>% 
-  mutate(doi = "10.1111/gcb.14904") %>%
-  RefManageR::as.BibEntry() %>% 
-  RefManageR::WriteBib("Published.bib")
-
-bibliography_entries("Published.bib")
-
-```
-
-## MANUSCRIPTS IN PREP
-
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
-
-RefManageR::BibEntry(bibtype="Misc", key = "EvoEcol2020", date = "", title = "Next-generation field courses should intergrate Open Science and online learning", author = "Sonya Geange and Jonathan von Oppen and Sara Middleton and Tasha-Leigh Gauthier and Tanya Strydom and Ragnhild Gya and...", journal = "Ecology and Evolution", pubstate = "in prep") %>%
-  c(.,RefManageR::BibEntry(bibtype="Misc", key = "HonsMS", date = "", title = "Bush encroachment in South Africa’s montane grasslands: the impact of Leucosidea sericea on microclimate and vegetation", author = "Tanya Strydom and Peter C. le Roux", journal = "", pubstate = "in prep")) %>%
-  RefManageR::as.BibEntry() %>%
-  RefManageR::WriteBib("Under_Review.bib")
-
-bibliography_entries("Under_Review.bib")
-
-```
-
-## POPULAR ARTICLES
-
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
-
-RefManageR::BibEntry(bibtype="Misc", key = "peru2020", date = "2020", title = "International scientists need better support during global emergencies", author = "Sehoya Cotner and Brian J. Enquist and Julia Chacon and Brian Maitner and William Farfan-Rios and Sean Michaletz and...", url = "https://www.timeshighereducation.com/blog/international-scientists-need-better-support-during-global-emergencies", journaltitle = "Times Higher Education") %>%
-  RefManageR::as.BibEntry() %>%
-  RefManageR::WriteBib("Popular_Articles.bib")
-
-bibliography_entries("Popular_Articles.bib")
-
-```
 
 # Funding and Awards
 
@@ -197,19 +201,3 @@ tribble(
 
 ```
 
-# References
-
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
-tribble(
-  ~Name, ~Title, ~Contact, ~Number,
-  'Peter C. le Roux, Ph.D.',  "Assistant professor of Ecology and Biodiversity, University of Pretoria", "peter.leroux@up.ac.za", "+27 (0)12 420 6761",
-  'Kristoffer Hylander, Ph.D.',  "Professor of Ecolgy,  Department of Ecology, Environment and Plant Sciences, Stockholm University", "kristoffer.hylander@su.se", NA,
-  'Sehoya Cotner, Ph.D.',  "Professor of Biology Teaching and Learning, University of Minnesota", "sehoya@umn.edu", "+1 (612) 626 2385"
-) %>% 
-  detailed_entries(
-    where = Contact,
-    with = Name, 
-    what = Title,
-    when = Number
-  )
-```

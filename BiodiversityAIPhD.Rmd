@@ -24,6 +24,7 @@ knit: (function(inputFile, encoding) {
   })
 header-includes:
 - \usepackage{pdfpages}
+- \usepackage{ragged2e}
    
 ---
 
@@ -31,50 +32,64 @@ header-includes:
 knitr::opts_chunk$set(fig.width=1, echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae);library(tibble);library(rorcid)
 ```
-
-\vspace{7mm}
-
-Dear, Timothée Poisot
-
-A letter of presentation (up to 1200 words), outlining past research achievements, future research plans, and any relevant information
-
-I came across your call for a PhD fellow on Twitter and after opening up the link, reading the title and description of the fellowship and doing some further looking around on the lab website I found myself getting very excited about the opportunities as well as topics of not only the fellowship specifically but those of the lab as a whole.
-
-I am a recent masters graduate having specialised in ecology and biodiversity and have had a strong focus in ecology throughout my tertiary education. This has been driven by an facination with understanding the interactions between species (particularly plants) as well as their relationship with their environment. My research conducted at the postgraduate level has primarily focused on these topics and has exposed me to the additional concepts of plant functional traits and fine-scale drivers in variation. However, it has also triggered a hunger for wanting to know more, including an understanding of the 'bigger picture' of how interactions fit together within a network or how this would scale-up to bigger ecosystem processes. I felt that although the research I was conducting was intersting and exciting \emph{something} was missing and that I wanted to get more from my research.
-
-I have always had an interest in the analytical and statistical side of research. This has lead me to take various courses throughout my education focusing on statistical analyses within biology and it was at a recent course focusing on Bayesian Statistics when we were working with hierarchical modelling that I came to the realisation that this was what was missing. I wanted to work with data at a 'higher' level and to get more well aquainted with the more advanced and complex modelling approaches we can take to better our understanding of the natural world. Couple this with my strong interest in coding and programming (which up to now has been limited to working in R) and we have a very good match. 
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\vspace{5mm}
 
 
+Dear Timothée Poisot,
+
+I came across your call for a PhD fellow on Twitter and after opening up the link, reading the title and description of the position and after doing some further looking around on the lab website I found myself getting very excited about the opportunities as well as topics of not only the position specifically but those of the lab as a whole.
+
+I am a recent masters graduate having specialised in ecology and biodiversity and have had a strong focus in ecology throughout my tertiary education. This has been driven by an fascination with understanding the interactions between species (particularly plants) as well as their relationship with their environment. My research conducted at the postgraduate level has primarily focused on these topics and has exposed me to the additional concepts of plant functional traits and fine-scale drivers in variation. This has included: 
+
+* Looking at the effect of an encroaching woody shrub on the immediate microclimate, the surrounding grassland community composition and, how it affects the expression of functional traits for my honours thesis.  
+
+* Measuring the variation in the expression of functional traits of plant communities within heterogeneous environments at fine-scales. 
+
+* Understanding the effects of historic management of forests as well as the current microclimate on population parameters of understory plant species for my masters thesis.
+
+* Most recently looking at the effect of of elevation and fire on community level expression of plant functional traits as part of a course and in collaboration with the Plant Functional Traits Courses team.
+
+These larger research projects have been complimented by a host of smaller research projects that have given me the opportunity to build and develop other auxiliary skills. These include having done some work with spatial analysis and species distributions, phylogenies and building of phylogenetic trees, and having done some work with image analysis.
+
+However, this previous research has also triggered a desire for wanting to know (and importantly \emph{understand}) more, including an understanding of the 'bigger picture' of how interactions fit together within a network or how this would scale-up to bigger ecosystem processes. I felt that although the research that I was conducting was interesting and exciting \emph{something} was missing and that I wanted to get more from my research. I have always had an interest in the analytical and statistical side of research. This has lead me to take various courses throughout my education focusing on statistical analyses within biology and it was at a recent course focusing on Bayesian Statistics when we were working with hierarchical modelling that I came to the realisation that this was what had been lacking. I wanted to work with my data at a 'higher' level and to get acquainted with the more advanced and complex modelling approaches we can take to better our understanding of the natural world and take a more theoretical approach to my research. This has been coupled by the development of a strong interest in coding and programming (which up to now has been limited to working in R) and promises to be a good compliment to wanting to further persue research that has a strong computational component. 
+
+I see this fellowship not only as an opportunity for me to fufill this desire to further explore and have a more mechanistic and theoretical grasp of the components of the natural world that I find fascinating but also as a chance for us to develop more comprehensive (and usable) models within ecology which, in turn, can only help us improve our understanding of the natural world. In addition to this I look forward to developing and publishing models and software that can then, in turn, be used by others in different settings and capacities as well as the opportunity to be involved at the university within an educational and mentoring capacity. The chance to actively be involved with equipping the next generation of scientists, be it organising and assisting with courses or working with other one-on-one in a mentorship role, is one that I look forward to and is one of the additional benefits of remaining and working in the academic research field.
+
+Looking forward into the long term I most certainly see myself remaining active within the research community and most likely remaining within academia. I think as my research interests currently stand I am mostly interested in developing a more comprehensive understanding of the intersecting point of species interactions (both directly and indirectly through modifications to microhabitat conditions), phenotypic plasticity and scale this up to understanding how this might affect species distributions in a rapidly changing world. I believe that remaining in academia (or at least in the public research sphere) allows me the creative freedom to pursue research questions that interest me but also gives me the chance to conduct research that is of public interest or relevance as opposed to research conducted within a private capacity. An additional appeal of remaining within academia is the role as an educator, as previously mentioned I look forward to working with and mentoring the next generation of researchers and this includes sharing of knowledge in more formal classroom settings.
+
+I see myself as an inherently curious person with a drive to learn more about the world around us and believe that the opportunity provided by this PhD position to step up and into the world of computational biology will help me to grow my skillset as a researcher and afford me the opportunity to go out into the world and be able to conduct research that makes a difference. I find the open nature of the position with regards to specific research topics to be appealing as it allows me to reflect upon and consider the philosophical side of research and develop a research program that not only reflects not my own research questions and interests but can developed so as to be of importance within and to the greater community. Finally, moving beyond research I believe that the values of the Poisot Lab mirror those of my own and that it is a working environment that I could see myself fit and thrive in.
+
+I look forward to hearing from you.
 
 \vspace{10mm}
 
 Best Regards, 
 
-\includegraphics{Signature-copy.jpg}
+\includegraphics{Signature.jpg}
 
 Tanya Strydom  
 
-\newpage
-
 \vspace{10mm}
 
-## A statement on Equity, Diversity, and Inclusivity within academia
+## A Statement on Equity, Diversity, and Inclusivity within academia
 
-A statement on Equity, Diversity, and Inclusiveness in academia, of up to 400 words
+I believe that academia has a history of being an environment that does not place value on being equal, diverse or inclusive. However, the recent civil unrest and general global climate has managed to spark a debate and introspection within the scientific community. It is my hope that this is an important turning point and that we as not only individuals but also as an institution/ community take an \emph{active} stance is making and maintaining an environment that is not only welcoming to all individuals but actively aims to create a diverse and inclusive community. Within the umbrella of Equity, Diversity and Inclusivity I feel very strongly about how elitist the scientific community may be at times with regards to how they share and disseminate research. This, in my opinion, is not only prevalent within academic circles where younger researchers may be excluded from research projects or that their opinion is undermined based on the fact that they are at the early stages of their career but is also a bigger issue when it comes to addressing the 'non-scientific' community. I feel very strongly that knowledge derived from research should be made available to all and this includes not only making it more freely available but also accessible (i.e. understandable) to those outside of academia or research. I believe that we as researchers should make a bigger and concentrated effort in including other researchers (particularly younger, less experienced or if doing remote fieldwork those that work and reside in the area) into our circles and projects and also ensure that we give them a voice and the space to voice their opinions. Along with this I feel that we need to make a more concerted effort with regards to scientific communication and sharing of our research with the general public - for me personally this has manifested as an interest in exploring visual communication and how we can visually convey results to transcend not only differences in educational backgrounds but also in languages. Thus, as a researcher I actively want to ensure that I create and work within a space that makes not only those within it feel included and safe but that I also keep the space open so that it is welcoming to those outside of it as well.
 
 \vspace{5mm}
 
-## A statement on Open Science
+## A Statement on Open Science
 
-A statement on Open Science of up to 400 words, if possible including quantified or qualified statements about previous or ongoing open practices, or a statement of open philosophy for applicants who have not received the opportunity of working openly
+The practice of conducting FAIR and open science is one that I have recently been actively introduced to, however it is one that I have taken to like a duck to water. The concept of conducting your science in an open manner fits with my above statement and views on making my research available and accessible to those outside of my immediate research circles. I feel that not only should open science be considered a means of best practice to allow the broader community to be able to understand and access your research but also is a gateway to allow as to do better and more synthesis driven research through access to data. Furthermore, I believe that my interest and belief in open science is mirrored in the efforts and actions I have taken to make my scientific practice a more open practice. This includes having submitted two different datasets on plant functional traits to the TRY database - which was featured in [\underline{this}](https://doi.org/10.1111/gcb.14904) publication as well as having taken the joint lead on an article discussing and highlighting the need to incorporate open science elements and teaching within field courses (this manuscript is currently in for review). In addition to this I have taken to working on GitHub and making my code available so as to create a reproducible workflow, allow others to learn from my code and as a means to make it findable. As a future endeavour I intend to supplement my GitHub repository by keeping an online lab book as a means of documenting the thought process that goes into the development of the final research methodology and approach. In addition to this I commit to making any future datasets as well as code publicly available, either by submitting them to online repositories or through publishing detailed data papers as well as being open to submitting manuscripts to preprint servers.
 
-\newpage
+\vspace{5mm}
 
-## A sample of my Research
+## A Sample of my Research
 
-A copy of the most representative publication (preprints accepted), alongside a 300 words explanation of why it is exciting
-
-\newpage
+Currently I do not have any research papers that are published or available for peer review, however I am currently working with a group of researchers on a publication looking at the effect of elevation and fire on plant community functional traits. To truly grasp how cool this endeavour is it helps to look at the research in context. The research consists of data collected on a field course earlier in the year with the Plant Functional Traits Courses team and is only a small component of a much larger network of data and research. Alongside our research group there are other groups that are looking at changes in from multiple levels of organisation (starting from leaf physiology all the way up to ecosystem processes) and also forms part of a larger data network from various global locations. This means that the research we as a larger team are producing is providing us with an understanding of the effect of elevation (and sometimes fire) on plants at various levels and provides the opportunity to potentially integrate these various projects to produce more complex models, giving us a better understanding on the effect on net primary production. In addition to being part of an interesting and exciting network of research projects the entire team also has a strong open science policy and we are encouraged to work within this framework, this includes having our code publicly available, eventually publishing the data documentation and the opportunity to work with data collected on future courses. Eventually this will help build a more robust understanding of ecosystem processes and how these relate to plant functional traits - all while working within a collaborative group. Thus, I am not only excited about the specific research but also the greater context of the research outputs.
 
 \vspace{10mm}
 
@@ -84,7 +99,7 @@ A copy of the most representative publication (preprints accepted), alongside a 
 tribble(
   ~Name, ~Title, ~Contact, ~Number,
   'Peter C. le Roux, Ph.D.',  "Assistant professor of Ecology and Biodiversity, University of Pretoria", "peter.leroux@up.ac.za", "+27 (0)12 420 6761",
-  'Kristoffer Hylander, Ph.D.',  "Professor of Ecolgy,  Department of Ecology, Environment and Plant Sciences, Stockholm University", "kristoffer.hylander@su.se", NA,
+  'Kristoffer Hylander, Ph.D.',  "Professor of Ecology,  Department of Ecology, Environment and Plant Sciences, Stockholm University", "kristoffer.hylander@su.se", NA,
   'Sehoya Cotner, Ph.D.',  "Professor of Biology Teaching and Learning, University of Minnesota", "sehoya@umn.edu", "+1 (612) 626 2385"
 ) %>% 
   detailed_entries(
