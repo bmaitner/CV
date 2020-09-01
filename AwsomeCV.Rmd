@@ -39,7 +39,7 @@ library(vitae);library(tibble);library(rorcid)
 
 # Research Interests
 
-ecoinformatics; functional traits; species interactions; microclimates; FAIR and open science
+computational ecology; functional traits; ecological networks; machine learning; FAIR and open science
 
 # Education
 
@@ -103,7 +103,7 @@ tribble(
     
   \cvskill
     {Phylogenetic Analysis}
-    {Extracting and cleaning samples from GenBank; MEGA}
+    {extracting and cleaning samples from GenBank; MEGA}
     
   \cvskill
     {Academic Writing}
