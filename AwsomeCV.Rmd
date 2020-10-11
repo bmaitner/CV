@@ -1,7 +1,7 @@
 ---
 name: Tanya
 surname: Strydom
-profilepic: "profile.png"
+#profilepic: "profile.png"
 position: "PhD Student"
 address: "Département de sciences biologiques, Université de Montréal"
 #phone: +46 76 567 8299
@@ -128,17 +128,6 @@ tribble(
 ## PEER-REVIEWED
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
 
-library(dplyr)
-
-scholar::get_publications("AkDd5u8AAAAJ", flush = TRUE) %>% 
-  distinct(title, .keep_all = TRUE) %>%
-  transmute(bibtype = "Article", author = as.character(author),
-            title = as.character(title),
-            journaltitle = as.character(journal), year) %>% 
-  mutate(doi = "10.1111/gcb.14904") %>%
-  RefManageR::as.BibEntry() %>% 
-  RefManageR::WriteBib("Published.bib")
-
 bibliography_entries("pubs.bib")
 
 ```
@@ -169,7 +158,23 @@ bibliography_entries("Popular_Articles.bib")
 
 ```
 
+$^\clubsuit$ = should be considered equal lead
 
+# Talks
+
+## INVITED TALKS
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+
+tribble(
+  ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
+  "Taking FAIR and open science to the field: The evolution of the PFTC field course","Presented alongside Aud, H. Halbritter", "Oct. 13, 2020", "Living Norway Colloquium 2020", "NINA, Norway"
+) %>%
+  detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points)
+
+```
+
+\newpage
 
 # Internships
 
