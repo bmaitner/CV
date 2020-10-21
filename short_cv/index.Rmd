@@ -1,7 +1,10 @@
 ---
+#citeproc: no
+graphics: yes
 name: Tanya
 surname: Strydom
-#profilepic: "profile.png"
+#headcolor: 414141
+#qualifications: 
 position: "PhD Student"
 address: "Département de sciences biologiques, Université de Montréal"
 #phone: +46 76 567 8299
@@ -10,15 +13,11 @@ email: "tanya.strydom@umontreal.ca"
 twitter: TanyaS_08
 github: TanyaS08
 orcid: 0000-0001-6067-1349
-#aboutme: "Cheese"
-#googlescholar: AkDd5u8AAAAJ
-headcolor: 414141 # use black color
+#aboutme: |
 date: "`r format(Sys.time(), '%B %Y')`"
-output: 
-  vitae::awesomecv:
-    pandoc_args: ["--lua-filter=multiple-bibliographies.lua"]
-nocite: '*@' # don't change this if you want to print out all the refs
-csl: apa-cv.csl # change this if you want to use other citation styles
+csl: "../csl/apa7-cv.csl"
+nocite: "@*"
+headcolor: 529FA8 # use love symbol #2
 knit: (function(inputFile, encoding) {
      rmarkdown::render(inputFile,
     output_file = "cv",
@@ -29,12 +28,26 @@ knit: (function(inputFile, encoding) {
      encoding = encoding, 
      output_dir = "docs/")
      })
-    
+bibliography_journals: "../bib/journal.bib"
+bibliography_review: "../bib/under_review.bib"
+bibliography_popular: "../bib/popular_articles.bib"
 ---
 
-```{r setup, include=FALSE, echo=FALSE, message = FALSE, warning = FALSE}
+```{r setup, include=FALSE, cache = FALSE}
+library(knitr)
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-library(vitae);library(tibble);library(rorcid)
+
+library(RefManageR)
+RefManageR::BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           sorting = "",
+           cite.style = "alphabetic",
+           style = "markdown",
+#           hyperlink = TRUE,
+           dashed = FALSE)
+
+library(vitae)
+library(tidyverse)
 ```
 
 # Research Interests
@@ -43,7 +56,7 @@ computational ecology; functional traits; ecological networks; machine learning;
 
 # Education
 
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
+```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 library(tibble)
 tribble(
   ~ Degree, ~Advisor, ~ Year, ~ Institution, ~ Where,
@@ -52,10 +65,14 @@ tribble(
   "Master of Science: Ecology and Biodiversity","Advisor: K. Hylander, PhD", "2018-20", "Stockholms Universitet", "Stockholm, Sweden",
   "Master of Science: Ecology and Biodiversity","Thesis: Declines and increases in northern and southern plant populations after changes in the microclimate", "2018-20", "Stockholms Universitet", "Stockholm, Sweden",
   "Bachelor of Science (Honours): Plant Sciences","Advisor: P.C. le Roux, PhD", "2017", "University of Pretoria", "Pretoria, South Africa",
-  "Bachelor of Science (Honours): Plant Sciences","Thesis: Bush encroachment in South Africa’s montane grasslands: the impact of Leucosidea sericea on microclimate and vegetation", "2017", "University of Pretoria", "Pretoria, South Africa",
+  "Bachelor of Science (Honours): Plant Sciences","Thesis: Bush encroachment in South Africa’s montane grasslands: the impact of \\textit{Leucosidea sericea} on microclimate and vegetation", "2017",
+"University of Pretoria", "Pretoria, South Africa",
+  "Bachelor of Science (Honours): Plant Sciences","Graduated \\textit{cum laude}", "2017",
+"University of Pretoria", "Pretoria, South Africa",
   "Bachelor of Science: Ecology", NA, "2014-16", "University of Pretoria", "Pretoria, South Africa"
 ) %>%
-  detailed_entries(with=Degree, when=Year, what=Institution, where=Where, why=Advisor)
+  detailed_entries(with=Degree, when=Year, what=Institution, where=Where, why=Advisor,
+                   .protect = FALSE)
 ```
 
 # Research Experience
@@ -125,50 +142,47 @@ tribble(
 
 # Written Work
 
-## PEER-REVIEWED
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
+## **Peer-reviewed**
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
 
-bibliography_entries("pubs.bib")
+::: {#refs_journals}
+:::
+\endgroup
 
-```
+## **Under Review**
 
-## MANUSCRIPTS
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
 
-**Under Review**
+::: {#refs_review}
+:::
+\endgroup
 
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
+## **Popular Articles**
 
-bibliography_entries("Under_Review.bib")
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
 
-```
-
-**In Prep**
-
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
-
-bibliography_entries("In_prep.bib")
-
-```
-
-## POPULAR ARTICLES
-
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
-
-bibliography_entries("Popular_Articles.bib")
-
-```
+::: {#refs_popular}
+:::
+\endgroup
 
 $^\clubsuit$ = should be considered equal lead
 
 # Talks
 
-## INVITED TALKS
+## **Invited talks**
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
 
 tribble(
   ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
-  "Taking FAIR and open science to the field: The evolution of the PFTC field course","Presented alongside Aud, H. Halbritter", "Oct. 13, 2020", "Living Norway Colloquium 2020", "NINA, Norway"
+  "Taking FAIR and open science to the field: The evolution of the PFTC field course","Presented as part of the education and open science workshop", "Oct. 13, 2020", "Living Norway Colloquium 2020: Towards openess and transparency in applied ecology", "Trondheim, Norway",
+  "Taking FAIR and open science to the field: The evolution of the PFTC field course","Presented alongside Aud H. Halbritter", "Oct. 13, 2020", "Living Norway Colloquium 2020: Towards openess and transparency in applied ecology", "Trondheim, Norway"
 ) %>%
   detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points)
 
@@ -212,3 +226,4 @@ tribble(
 
 ```
 
+<!--chapter:end:CV.Rmd-->
