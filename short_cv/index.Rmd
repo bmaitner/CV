@@ -30,6 +30,7 @@ knit: (function(inputFile, encoding) {
 bibliography_journals: "../bib/journal.bib"
 bibliography_review: "../bib/under_review.bib"
 bibliography_popular: "../bib/popular_articles.bib"
+bibliography_prep: "../bib/in_prep.bib"
 ---
 
 ```{r setup, include=FALSE, cache = FALSE}
@@ -51,7 +52,7 @@ library(tidyverse)
 
 # Research Interests
 
-computational ecology; functional traits; ecological networks; machine learning; FAIR and open science
+computational ecology; functional traits; ecological networks; species interactions; FAIR and open science
 
 # Education
 
@@ -60,18 +61,33 @@ library(tibble)
 tribble(
   ~ Degree, ~Advisor, ~ Year, ~ Institution, ~ Where,
   "Doctor of Philosophy: Biological Sciences","Advisor: T. Poisot, PhD", "2020 - Present", "Université de Montréal", "Montréal, Canada",
-  "Doctor of Philosophy: Biological Sciences","Thesis: Machine learning in ecology", "2020 - Present", "Université de Montréal", "Montréal, Canada",
+  "Doctor of Philosophy: Biological Sciences","Thesis: Common properties of species interactions networks across space", "2020 - Present", "Université de Montréal", "Montréal, Canada",
   "Master of Science: Ecology and Biodiversity","Advisor: K. Hylander, PhD", "2018-20", "Stockholms Universitet", "Stockholm, Sweden",
   "Master of Science: Ecology and Biodiversity","Thesis: Declines and increases in northern and southern plant populations after changes in the microclimate", "2018-20", "Stockholms Universitet", "Stockholm, Sweden",
   "Bachelor of Science (Honours): Plant Sciences","Advisor: P.C. le Roux, PhD", "2017", "University of Pretoria", "Pretoria, South Africa",
   "Bachelor of Science (Honours): Plant Sciences","Thesis: Bush encroachment in South Africa’s montane grasslands: the impact of \\textit{Leucosidea sericea} on microclimate and vegetation", "2017",
 "University of Pretoria", "Pretoria, South Africa",
-  "Bachelor of Science (Honours): Plant Sciences","Graduated \\textit{cum laude}", "2017",
-"University of Pretoria", "Pretoria, South Africa",
   "Bachelor of Science: Ecology", NA, "2014-16", "University of Pretoria", "Pretoria, South Africa"
 ) %>%
   detailed_entries(with=Degree, when=Year, what=Institution, where=Where, why=Advisor,
                    .protect = FALSE)
+```
+
+# Affiliations
+
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+
+tribble(
+  ~Institution, ~Award, ~Year,
+  'Regular Member',  "Québec Centre for Biodiversity Sciences", "2020 - Present",
+) %>%
+  detailed_entries(
+    what = Institution,
+    with = Award,
+    when = Year
+  )
+
 ```
 
 # Research Experience
@@ -102,43 +118,6 @@ tribble(
 
 
 \newpage
-# Technical Skills
-
-\begin{cvskills}
-  \cvskill
-    {Statistical Analysis}
-    {generalized and linear mixed-effect models; mulitvariate analysis; Bayesian analysis; primarily using R}
-
-  \cvskill
-    {Spatial Analysis}
-    {spatial analysis in ecology; ArcGIS; Maxent; GBIF}
-
-  \cvskill
-    {Image Analysis}
-    {ImageJ; Adobe Photoshop}
-
-  \cvskill
-    {Phylogenetic Analysis}
-    {extracting and cleaning samples from GenBank; MEGA}
-
-  \cvskill
-    {Academic Writing}
-    {assessed at various levels; peer-reviewed articles; literature reviews; research proposals; reports; popular articles}
-
-  \cvskill
-    {Oral Communication}
-    {masters level course; presented in various settings}
-
-  \cvskill
-    {Peer Review}
-    {as an assistant (PLoS ONE, 2018); second-round reviewer (Plant Ecology, 2019)}
-
-  \cvskill
-    {Language Skills}
-    {English and Afrikaans as a native speaker; conversational in German; basic Swedish and Spanish}
-
-\end{cvskills}
-
 # Written Work
 
 ## **Peer-reviewed**
@@ -188,6 +167,43 @@ tribble(
     .protect = FALSE)
 
 ```
+
+# Technical Skills
+
+\begin{cvskills}
+  \cvskill
+    {Statistical Analysis}
+    {generalized and linear mixed-effect models; mulitvariate analysis; Bayesian analysis; primarily using R}
+
+  \cvskill
+    {Spatial Analysis}
+    {spatial analysis in ecology; ArcGIS; Maxent; GBIF}
+
+  \cvskill
+    {Image Analysis}
+    {ImageJ; Adobe Photoshop}
+
+  \cvskill
+    {Phylogenetic Analysis}
+    {extracting and cleaning samples from GenBank; MEGA}
+
+  \cvskill
+    {Academic Writing}
+    {assessed at various levels; peer-reviewed articles; literature reviews; research proposals; reports; popular articles}
+
+  \cvskill
+    {Oral Communication}
+    {masters level course; presented in various settings}
+
+  \cvskill
+    {Peer Review}
+    {as an assistant (PLoS ONE, 2018); second-round reviewer (Plant Ecology, 2019)}
+
+  \cvskill
+    {Language Skills}
+    {English and Afrikaans as a native speaker; conversational in German; basic Swedish and Spanish}
+
+\end{cvskills}
 
 \newpage
 
