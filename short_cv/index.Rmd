@@ -61,7 +61,7 @@ library(tibble)
 tribble(
   ~ Degree, ~Advisor, ~ Year, ~ Institution, ~ Where,
   "Doctor of Philosophy: Biological Sciences","Advisor: T. Poisot, PhD", "2020 - Present", "Université de Montréal", "Montréal, Canada",
-  "Doctor of Philosophy: Biological Sciences","Thesis: Common properties of species interactions networks across space", "2020 - Present", "Université de Montréal", "Montréal, Canada",
+  "Doctor of Philosophy: Biological Sciences","Thesis: Common properties of species interaction networks across space", "2020 - Present", "Université de Montréal", "Montréal, Canada",
   "Master of Science: Ecology and Biodiversity","Advisor: K. Hylander, PhD", "2018-20", "Stockholms Universitet", "Stockholm, Sweden",
   "Master of Science: Ecology and Biodiversity","Thesis: Declines and increases in northern and southern plant populations after changes in the microclimate", "2018-20", "Stockholms Universitet", "Stockholm, Sweden",
   "Bachelor of Science (Honours): Plant Sciences","Advisor: P.C. le Roux, PhD", "2017", "University of Pretoria", "Pretoria, South Africa",
@@ -120,7 +120,7 @@ tribble(
 \newpage
 # Written Work
 \vspace{\baselineskip}
-## **Peer-reviewed**
+## **Publications**
 \begingroup
 \setlength{\parindent}{-0.5in}
 \setlength{\leftskip}{0.5in}
@@ -129,7 +129,7 @@ tribble(
 :::
 \endgroup
 \vspace{\baselineskip}
-## **Under Review**
+## **Manuscripts Under Review**
 
 \begingroup
 \setlength{\parindent}{-0.5in}
@@ -139,7 +139,7 @@ tribble(
 :::
 \endgroup
 \vspace{\baselineskip}
-## **In Prep**
+## **Manuscripts In Prep**
 
 \begingroup
 \setlength{\parindent}{-0.5in}
@@ -161,7 +161,7 @@ tribble(
 
 $^\clubsuit$ = should be considered equal lead
 
-# Talks
+# Presentations
 \vspace{\baselineskip}
 ## **Invited talks**
 
@@ -169,9 +169,23 @@ $^\clubsuit$ = should be considered equal lead
 
 tribble(
   ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
-  "Taking FAIR and open science to the field: The evolution of the PFTC field course","Presented as part of the education and open science workshop", "Oct. 13, 2020", "Living Norway Colloquium 2020: Towards openess and transparency in applied ecology", "Trondheim, Norway",
-  "Taking FAIR and open science to the field: The evolution of the PFTC field course","Presented alongside Aud H. Halbritter", "Oct. 13, 2020", "Living Norway Colloquium 2020: Towards openess and transparency in applied ecology", "Trondheim, Norway",
-  "Taking FAIR and open science to the field: The evolution of the PFTC field course",'\\href{https:doi.org/10.5281/zenodo.4117503}{Link to slides}', "Oct. 13, 2020", "Living Norway Colloquium 2020: Towards openess and transparency in applied ecology", "Trondheim, Norway"
+  "Taking FAIR and open science to the field: The evolution of the PFTC field course","Presented as part of the education and open science workshop", "Oct., 2020", "Living Norway Colloquium 2020: Towards openess and transparency in applied ecology", "Trondheim, Norway",
+  "Taking FAIR and open science to the field: The evolution of the PFTC field course","\\textbf{Tanya Strydom} alongside Aud H. Halbritter, 109 PFTC Participants", "Oct., 2020", "Living Norway Colloquium 2020: Towards openess and transparency in applied ecology", "Trondheim, Norway",
+  "Taking FAIR and open science to the field: The evolution of the PFTC field course",'\\href{https:doi.org/10.5281/zenodo.4117503}{Link to slides}', "Oct., 2020", "Living Norway Colloquium 2020: Towards openess and transparency in applied ecology", "Trondheim, Norway"
+) %>%
+  detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
+    .protect = FALSE)
+
+```
+\vspace{\baselineskip}
+## **Talks**
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
+
+tribble(
+  ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
+  "Exploring the complexity of ecological networks using SVD entropy","\\textbf{Tanya Strydom}, Giulio V. Dalla Riva and Timothée Poisot", "Dec., 2020", "11th Annual QCBS Symposium", "Québec, Canada",
+  "Exploring the complexity of ecological networks using SVD entropy",'\\href{https://tanyas08.github.io/Talks/2020_Dec_QCBS/index.html}{Link to slides}', "Dec., 2020", "11th Annual QCBS Symposium", "Québec, Canada"
 ) %>%
   detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
     .protect = FALSE)
