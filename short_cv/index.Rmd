@@ -256,8 +256,8 @@ tribble(
 
 tribble(
   ~Institution, ~Award, ~Year,
-  'Awarded by: University of Pretoria',  "Qualified for the UP Postgraduate Masters Research Bursary.", "2018",
-  'Awarded by: University of Pretoria',  "Awarded the 3rd year Undergraduate Mentorship Bursary.", "2016"
+  'Awarded by: University of Pretoria',  "Qualified for the UP Postgraduate Masters Research Bursary", "2018",
+  'Awarded by: University of Pretoria',  "Awarded the 3rd year Undergraduate Mentorship Bursary", "2016"
 ) %>%
   detailed_entries(
     what = Institution,
