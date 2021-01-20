@@ -13,6 +13,7 @@ email: "tanya.strydom@umontreal.ca"
 twitter: TanyaS_08
 github: TanyaS08
 orcid: 0000-0001-6067-1349
+#publons: ABH-3144-2020
 #aboutme: |
 date: "`r format(Sys.time(), '%B %Y')`"
 csl: "../csl/apa7-cv.csl"
@@ -31,6 +32,8 @@ bibliography_journals: "../bib/journal.bib"
 bibliography_review: "../bib/under_review.bib"
 bibliography_popular: "../bib/popular_articles.bib"
 bibliography_prep: "../bib/in_prep.bib"
+header-includes:
+  - \usepackage{fontawesome5}
 ---
 
 ```{r setup, include=FALSE, cache = FALSE}
@@ -48,6 +51,7 @@ RefManageR::BibOptions(check.entries = FALSE,
 
 library(vitae)
 library(tidyverse)
+library(fontawesome)
 ```
 
 # Research Interests
@@ -139,16 +143,7 @@ tribble(
 :::
 \endgroup
 \vspace{\baselineskip}
-## **Manuscripts In Prep**
 
-\begingroup
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
-
-::: {#refs_prep}
-:::
-\endgroup
-\vspace{\baselineskip}
 ## **Popular Articles**
 
 \begingroup
@@ -158,8 +153,6 @@ tribble(
 ::: {#refs_popular}
 :::
 \endgroup
-
-$^\clubsuit$ = should be considered equal lead
 
 # Presentations
 \vspace{\baselineskip}
