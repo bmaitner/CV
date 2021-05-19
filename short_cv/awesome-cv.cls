@@ -288,10 +288,6 @@
 % Usage: \homepage{<url>}
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 
-% Defines writer's orcid (optional)
-% Usage: \orcid{<orcid>}
-\newcommand*{\orcid}[1]{\def\@orcid{#1}}
-
 % Defines writer's Publons account (optional)
 % Usage: \publons{<publons>}
 \newcommand*{\publons}[1]{\def\@publons{#1}}
@@ -328,6 +324,10 @@
 % Defines writer's skype (optional)
 % Usage: \skype{<skype account>}
 \newcommand*{\skype}[1]{\def\@skype{#1}}
+
+% Defines writer's orcid (optional)
+% Usage: \orcid{<orcid>}
+\newcommand*{\orcid}[1]{\def\@orcid{#1}}
 
 % Defines writer's reddit (optional)
 % Usage: \reddit{<reddit account>}
@@ -473,12 +473,6 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{http://\@homepage}{\faHome\acvHeaderIconSep\@homepage}%
         }%
-      \ifthenelse{\isundefined{\@orcid}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://orcid.org/\@orcid}{\aiOrcidSquare\acvHeaderIconSep\@orcid}%
-        }%
       \ifthenelse{\isundefined{\@publons}}%
         {}%
         {%
@@ -521,12 +515,6 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\acvHeaderIconSep\@linkedin}%
         }%
-      \ifthenelse{\isundefined{\@twitter}}%
-        {}%
-        {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
-        }%
       \ifthenelse{\isundefined{\@skype}}%
         {}%
         {%
@@ -539,7 +527,20 @@
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \href{https://www.reddit.com/user/\@reddit}{\faReddit\acvHeaderIconSep\@reddit}%
         }%
-      \ifthenelse{\isundefined{\@xing}}%
+        \ifthenelse{\isundefined{\@orcid}}%
+          {}%
+          {%
+            \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+            \href{https://orcid.org/\@orcid}{\aiOrcidSquare\acvHeaderIconSep\@orcid}%
+          }%
+        \ifthenelse{\isundefined{\@twitter}}%
+          {}%
+          {%
+            \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+            \newline
+            \href{https://twitter.com/\@twitter}{\faTwitter\acvHeaderIconSep\@twitter}%
+          }%
+        \ifthenelse{\isundefined{\@xing}}%
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%

@@ -6,14 +6,17 @@ surname: Strydom
 #headcolor: 414141
 #qualifications:
 position: "PhD Student"
-address: "Département de sciences biologiques, Université de Montréal"
+address: "Département de sciences biologiques, Université de Montréal, Pavillon Marie-Victorin, PO Box 6128 Centre-ville Stn, Montréal, QC, H3C 3J7 Canada"
 #phone: +46 76 567 8299
+profilepic: LogoNetwork.png
 www: "tanyadoesscience.com"
 email: "tanya.strydom@umontreal.ca"
 twitter: TanyaS_08
 github: TanyaS08
 orcid: 0000-0001-6067-1349
 #publons: ABH-3144-2020
+#googlescholar: AkDd5u8AAAAJ
+#researchgate: Tanya-Strydom
 #aboutme: |
 date: "`r format(Sys.time(), '%B %Y')`"
 csl: "../csl/apa7-cv.csl"
@@ -109,9 +112,6 @@ tribble(
   #For interactions
   "Plant-pollinator interactions in different microsites", "J. Ehrlén, PhD and A. Tack, PhD", "A Masters level course research project.", "2019",
   "Plant-pollinator interactions in different microsites", "J. Ehrlén, PhD and A. Tack, PhD", "Independently worked on hypothesis formulation and experimental design.", "2019",
-    #For marion
-    "Changes in plant functional traits at fine-scales", "P.C. le Roux, PhD", "Collecting and processing plant functional traits on sub-Antarctic Marion Island.", "2018",
-  "Changes in plant functional traits at fine-scales", "P.C. le Roux, PhD", "Research focused on looking at changes in plant functional traits along microclimate gradients.", "2018",
   #Honours
   "The impact of an encroaching species on vegetation and microclimate", "P.C. le Roux, PhD","Honours degree research project.", "2017",
   "The impact of an encroaching species on vegetation and microclimate", "P.C. le Roux, PhD","Research focused on the concepts of biotic interactions, ecosystem engineering and habitat modification.", "2017") %>%
@@ -155,6 +155,8 @@ tribble(
 :::
 \endgroup
 
+\newpage
+
 # Presentations
 \vspace{\baselineskip}
 ## **Invited talks**
@@ -186,7 +188,6 @@ tribble(
 
 ```
 
-\newpage
 
 # Technical Skills
 
