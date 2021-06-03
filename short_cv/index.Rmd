@@ -4,7 +4,7 @@ graphics: yes
 name: Tanya
 surname: Strydom
 #headcolor: 414141
-#qualifications:
+#qualifications: "BSc. (Hons), MSc."
 position: "PhD Student"
 address: "Département de sciences biologiques, Université de Montréal, Pavillon Marie-Victorin, PO Box 6128 Centre-ville Stn, Montréal, QC, H3C 3J7 Canada"
 #phone: +46 76 567 8299
@@ -80,23 +80,6 @@ tribble(
                    .protect = FALSE)
 ```
 
-# Affiliations
-
-
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
-
-tribble(
-  ~Institution, ~Award, ~Year,
-  'Student Member',  "Québec Centre for Biodiversity Sciences", "2020 - Present",
-) %>%
-  detailed_entries(
-    what = Institution,
-    with = Award,
-    when = Year
-  )
-
-```
-
 # Research Experience
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
@@ -122,7 +105,26 @@ tribble(
 
 
 \newpage
-# Written Work
+# Academic Service
+
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+
+tribble(
+  ~Institution, ~Award, ~Year,
+  'Student Member',  "Québec Centre for Biodiversity Sciences", "2020 - Present",
+  'Plant Ecology, PLoS ONE',  "Reviewed Journals", "",
+) %>%
+  detailed_entries(
+    what = Institution,
+    with = Award,
+    when = Year
+  )
+
+```
+
+
+# Publications
 \vspace{\baselineskip}
 ## **Publications**
 \begingroup
@@ -145,6 +147,24 @@ tribble(
 \vspace{\baselineskip}
 
 
+# Science Communication & Engagement
+\vspace{\baselineskip}
+## **Communication**
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
+
+tribble(
+  ~Institution, ~Title, ~Year,
+  "Fortnightly cartoonist for Ecology for the Masses blog",  "Cartoonist", "2020 - present",
+) %>%
+  detailed_entries(
+    what = Institution,
+    with = Title,
+    when = Year
+  )
+
+```
+\vspace{\baselineskip}
 ## **Popular Articles**
 
 \begingroup
@@ -217,12 +237,8 @@ tribble(
     {masters level course; presented in various settings}
 
   \cvskill
-    {Peer Review}
-    {as an assistant (PLoS ONE, 2018); second-round reviewer (Plant Ecology, 2019)}
-
-  \cvskill
     {Language Skills}
-    {English and Afrikaans as a native speaker; conversational in German; basic Swedish and Spanish}
+    {English and Afrikaans as a native speaker; conversational in German}
 
 \end{cvskills}
 
