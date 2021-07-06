@@ -103,8 +103,7 @@ tribble(
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
 tribble(
   ~ Project, ~Supervisor, ~Description,  ~ Year,
-  # CAN metaweb
-  "Canadian metaweb construction working group","PIs: T. Poisot (Université de Montréal) and L.J. Pollock, (McGill University)","Leader as one of the sub-projects focused on using machine leanring for prediction", "2021",
+
   # Network pred synth
   "Network prediction synthesis working group","PIs: T. Poisot (Université de Montréal) and L.J. Pollock, (McGill University)","Co-lead author of resulting publication", "2020",
   #PFTC5
@@ -180,21 +179,6 @@ tribble(
   ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
   "Designing a collective prototype of future tropical and subtropical science","Gracielle Higino, Mickey Boakye, Norma Forero, \\textbf{Tanya Strydom}", "Jul., 2021", "ATBC Annual Meeting", "Virtual",
   "Designing a collective prototype of future tropical and subtropical science",'\\href{https://graciellehigino.github.io/future.ecology/}{Link to webpage}', "Jul., 2021", "ATBC Annual Meeting", "Virtual"
-) %>%
-  detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
-    .protect = FALSE)
-
-```
-
-# Teaching
-\vspace{\baselineskip}
-## **Workshops**
-
-```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
-
-tribble(
-  ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
-  "(un)Reproducibility Detox - Package and Dependency Management","Gracielle Higino, Andrew MacDonald, \\textbf{Tanya Strydom}", "Jul., 2021", "BIOS$^2$", "Virtual"
 ) %>%
   detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
     .protect = FALSE)
