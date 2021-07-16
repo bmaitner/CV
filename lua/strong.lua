@@ -13,6 +13,16 @@ function Block (el)
           table.remove(el.content, k+2)  -- safe? another way would be to set element k+2 to Str("")
           -- no real need to skip ipairs items here
 
+      elseif el.content[k].t == "Str" and el.content[k].text == "Strydom*,"
+      and el.content[k+1].t == "Space"
+      and el.content[k+2].t == "Str" and el.content[k+2].text:find("^T.") then
+
+          local _,e = el.content[k+2].text:find("^T.")
+          local rest = el.content[k+2].text:sub(e+1)  -- empty if e+1>length
+          el.content[k] = pandoc.Strong { pandoc.Str("Strydom*, T.") }
+          el.content[k+1] = pandoc.Str(rest)
+          table.remove(el.content, k+2)  -- safe? another way would be to set element k+2 to Str("")
+          -- no real need to skip ipairs items here
       end
 
     end

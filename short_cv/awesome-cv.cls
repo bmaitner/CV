@@ -745,3 +745,12 @@
       \letterenclosurestyle{\@letterenclname: \@letterenclosure} \\
     }
 }
+
+%-------------------------------------------------------------------------------
+%                Commands for elements of publications
+%-------------------------------------------------------------------------------
+
+\usepackage[backend=biber, style=numeric-comp, sorting=none,
+  maxbibnames=50, eprint=false,
+  backref=true, backrefstyle=three]{biblatex}
+\usepackage{csquotes}
