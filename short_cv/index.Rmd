@@ -68,7 +68,7 @@ library(tibble)
 tribble(
   ~ Degree, ~Advisor, ~ Year, ~ Institution, ~ Where,
   "Doctor of Philosophy: Biological Sciences","Advisor: T. Poisot, PhD", "2020 - Present", "Université de Montréal", "Montréal, Canada",
-  "Doctor of Philosophy: Biological Sciences","Thesis: Common properties of species interaction networks across space", "2020 - Present", "Université de Montréal", "Montréal, Canada",
+  "Doctor of Philosophy: Biological Sciences","Thesis: Decoding Ecological Networks (in terms of the information from within)", "2020 - Present", "Université de Montréal", "Montréal, Canada",
   "Master of Science: Ecology and Biodiversity","Advisor: K. Hylander, PhD", "2018-20", "Stockholms Universitet", "Stockholm, Sweden",
   "Master of Science: Ecology and Biodiversity","Thesis: Declines and increases in northern and southern plant populations after changes in the microclimate", "2018-20", "Stockholms Universitet", "Stockholm, Sweden",
   "Bachelor of Science (Honours): Plant Sciences","Advisor: P.C. le Roux, PhD", "2017", "University of Pretoria", "Pretoria, South Africa",
@@ -119,7 +119,7 @@ tribble(
 
 # Publications
 
-\textsuperscript{*} Indicates equal authorship
+\textsuperscript{*} Indicates co-lead author
 
 \vspace{\baselineskip}
 ## **Publications**
@@ -174,6 +174,20 @@ tribble(
 
 ```
 
+\vspace{\baselineskip}
+## **Short Presentations**
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
+
+tribble(
+  ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
+  "Reconstructing food webs using transfer learning","\\textbf{Tanya Strydom}, Salomé Bouskila and Timothée Poisot", "Aug., 2021", "CSEE-SCEE 2021 Annual Meeting", "Virtual",
+  # "Reconstructing food webs using transfer learning",'\\href{https://tanyas08.github.io/Talks/2020_Dec_QCBS/index.html}{Link to twitter thread}', "Aug., 2021", "CSEE-SCEE 2021 Annual Meeting", "Virtual"
+) %>%
+  detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
+    .protect = FALSE)
+
+```
 
 \vspace{\baselineskip}
 ## **Workshops**
@@ -190,6 +204,23 @@ tribble(
 
 ```
 
+<!--- 
+# Teaching
+\vspace{\baselineskip}
+## **Workshops**
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+
+tribble(
+  ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
+  "(un)Reproducibility Detox - Package and Dependency Management","Gracielle Higino, Andrew MacDonald, \\textbf{Tanya Strydom}", "Nov., 2021", "BIOS$^2$", "Virtual"
+) %>%
+  detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
+    .protect = FALSE)
+
+```
+
+--->
 
 # Science Communication & Engagement
 \vspace{\baselineskip}
