@@ -104,7 +104,7 @@ tribble(
 tribble(
   ~ Project, ~Supervisor, ~Description,  ~ Year,
   # CAN metaweb
-  "Canadian metaweb construction working group","PIs: T. Poisot (Université de Montréal) and L.J. Pollock, (McGill University)","Leader as one of the sub-projects focused on using machine leanring for prediction", "2021",
+  "Canadian metaweb construction working group","PIs: T. Poisot (Université de Montréal) and L.J. Pollock, (McGill University)","Leader as one of the sub-projects focused on using machine learning for prediction", "2021",
   # Network pred synth
   "Network prediction synthesis working group","PIs: T. Poisot (Université de Montréal) and L.J. Pollock, (McGill University)","Co-lead author of resulting publication", "2020",
   #PFTC5
