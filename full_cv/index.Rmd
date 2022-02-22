@@ -166,10 +166,10 @@ tribble(
 ```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
 tribble(
-  ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
-  "Exploring the complexity of ecological networks using SVD entropy","\\textbf{Tanya Strydom}, Giulio V. Dalla Riva and Timothée Poisot", "Dec., 2020", "11th Annual QCBS Symposium", "Virtual",
+  ~ Title, ~ Year, ~ Conference, ~ Who,
+  "Exploring the complexity of ecological networks using SVD entropy", "Dec., 2020", "11th Annual QCBS Symposium", "\\textbf{Tanya Strydom}, Giulio V. Dalla Riva and Timothée Poisot",
 ) %>%
-  detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
+  detailed_entries(with=Title, when=Year, what=Who, where=Conference,
     .protect = FALSE)
 
 ```
