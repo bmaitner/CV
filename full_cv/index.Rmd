@@ -152,11 +152,10 @@ tribble(
 ```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
 tribble(
-  ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
-  "Taking FAIR and open science to the field: The evolution of the PFTC field course","Presented as part of the education and open science workshop", "Oct., 2020", "Living Norway Colloquium 2020: Towards openess and transparency in applied ecology", "Virtual",
-  "Taking FAIR and open science to the field: The evolution of the PFTC field course","\\textbf{Tanya Strydom} alongside Aud H. Halbritter, 109 PFTC Participants", "Oct., 2020", "Living Norway Colloquium 2020: Towards openess and transparency in applied ecology", "Virtual",
+  ~ Title, ~ Year, ~ Conference, ~ Who,
+  "Taking FAIR and open science to the field: The evolution of the PFTC field course","Oct., 2020", "Living Norway Colloquium", "\\textbf{Tanya Strydom} alongside Aud H. Halbritter, 109 PFTC Participants",
 ) %>%
-  detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
+  detailed_entries(with=Title, when=Year, what=Who, where=Conference,
     .protect = FALSE)
 
 ```
@@ -180,11 +179,10 @@ tribble(
 ```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
 tribble(
-  ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
-  "Reconstructing food webs using transfer learning","\\textbf{Tanya Strydom}, Salomé Bouskila and Timothée Poisot", "Aug., 2021", "CSEE-SCEE 2021 Annual Meeting", "Virtual",
-  # "Reconstructing food webs using transfer learning",'\\href{https://tanyas08.github.io/Talks/2020_Dec_QCBS/index.html}{Link to twitter thread}', "Aug., 2021", "CSEE-SCEE 2021 Annual Meeting", "Virtual"
+  ~ Title, ~ Year, ~ Conference, ~ Who,
+  "Reconstructing food webs using transfer learning", "Aug., 2021", "CSEE-SCEE Annual Meeting", "\\textbf{Tanya Strydom}, Salomé Bouskila and Timothée Poisot",
 ) %>%
-  detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
+  detailed_entries(with=Title, when=Year, what=Who, where=Conference,
     .protect = FALSE)
 
 ```
@@ -195,10 +193,10 @@ tribble(
 ```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
 tribble(
-  ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
-  "Designing a collective prototype of future tropical and subtropical science","Gracielle Higino, Mickey Boakye, Norma Forero, \\textbf{Tanya Strydom}", "Jul., 2021", "ATBC Annual Meeting", "Virtual",
+  ~ Title, ~ Year, ~ Conference, ~ Who,
+  "Designing a collective prototype of future tropical and subtropical science", "Jul., 2021", "ATBC Annual Meeting","Gracielle Higino, Mickey Boakye, Norma Forero, \\textbf{Tanya Strydom}"
 ) %>%
-  detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
+  detailed_entries(with=Title, when=Year, what=Who, where=Conference,
     .protect = FALSE)
 
 ```
