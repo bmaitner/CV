@@ -153,8 +153,8 @@ tribble(
 
 tribble(
   ~ Title, ~ Year, ~ Conference, ~ Who,
-  "Taking FAIR and open science to the field: The evolution of the PFTC field course","Oct., 2020", "Living Norway Colloquium", "\\textbf{Tanya Strydom} alongside Aud H. Halbritter, 109 PFTC Participants",
-   "Making something out of nothing at all: Transfer learning for network prediction","Apr., 2022", "ML4MS mini-conference", "Tanya Strydom",
+    "Making something out of nothing at all: Transfer learning for network prediction","Apr., 2022", "ML4MS mini-conference", "Tanya Strydom",
+ "Taking FAIR and open science to the field: The evolution of the PFTC field course","Oct., 2020", "Living Norway Colloquium", "\\textbf{Tanya Strydom} alongside Aud H. Halbritter, 109 PFTC Participants",
 ) %>%
   detailed_entries(with=Title, when=Year, what=Who, where=Conference,
     .protect = FALSE)
