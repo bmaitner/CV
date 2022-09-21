@@ -189,12 +189,13 @@ tribble(
 ```
 
 \vspace{\baselineskip}
-## **Workshops**
+## **Workshops and Organised Sessions**
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
 tribble(
   ~ Title, ~ Year, ~ Conference, ~ Who,
+  "Space Oddity: Thinking About Ecological Networks Across Space", "Aug., 2022", "ESA/CSEE Meeting","Francis Banville, Gabriel Dansereau, \\textbf{Tanya Strydom}",
   "Designing a collective prototype of future tropical and subtropical science", "Jul., 2021", "ATBC Annual Meeting","Gracielle Higino, Mickey Boakye, Norma Forero, \\textbf{Tanya Strydom}"
 ) %>%
   detailed_entries(with=Title, when=Year, what=Who, where=Conference,
