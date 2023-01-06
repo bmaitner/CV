@@ -229,7 +229,7 @@ tribble(
 
 tribble(
   ~Institution, ~Title, ~Year,
-  "Fortnightly cartoonist for Ecology for the Masses blog",  "Cartoonist", "2020 - present",
+  "Fortnightly cartoonist for Ecology for the Masses blog",  "Cartoonist", "2020 - 2022",
 ) %>%
   detailed_entries(
     what = Institution,
