@@ -11,7 +11,7 @@ address: "Département de sciences biologiques, Université de Montréal - Campu
 profilepic: LogoNetwork.png
 www: "tanyadoesscience.com"
 email: "tanya.strydom@umontreal.ca"
-twitter: TanyaS_08
+twitter: TanyaS08
 github: TanyaS08
 orcid: 0000-0001-6067-1349
 #publons: ABH-3144-2020
