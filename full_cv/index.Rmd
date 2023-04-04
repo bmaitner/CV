@@ -252,27 +252,6 @@ tribble(
 :::
 \endgroup
 
-\newpage
-
-# Academic Service
-
-
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
-
-tribble(
-  ~Institution, ~Award, ~Year,
-  'Member',  "Societry for Open, Reliable, and Transparent Ecology and Evolutionary Biology", "2021 - Present",
-    'Student Member',  "Québec Centre for Biodiversity Sciences", "2020 - Present",
-  'Plant Ecology, PLoS ONE',  "Reviewed Journals", "",
-) %>%
-  detailed_entries(
-    what = Institution,
-    with = Award,
-    when = Year
-  )
-
-```
-
 # Funding and Awards
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
