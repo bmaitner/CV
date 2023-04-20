@@ -108,14 +108,16 @@ tribble(
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
 tribble(
   ~ Project, ~Supervisor, ~Description,  ~ Year,
-  # LIVING DATA
-  "Merging Statistical Theory and Analyses at the Interface of Microbial and ‘Macrobial’ Ecology","PIs: M, Liebold, P. Peres-Neto, and E. Thebault ",NA, "2022",
+  # Macro-Micro
+  "Black Holes and Revelations: Identifying Priority Sampling Locations for Local Food Webs in Canada","PIs: G. Dansereau, F. Banville, M. Catchen, and T. Strydom",NA, "2022",
+  # Macro-Micro
+  "Merging Statistical Theory and Analyses at the Interface of Microbial and ‘Macrobial’ Ecology","PIs: M. Liebold, P. Peres-Neto, and E. Thebault ",NA, "2022",
   # CAN metaweb
-  "Canadian metaweb construction working group","PIs: T. Poisot and L.J. Pollock","Leader of one of the sub-projects focused on using machine learning for prediction", "2021",
+  "Canadian metaweb construction working group","PIs: T. Poisot and L.J. Pollock",NA, "2021",
   # Network pred synth
-  "Network prediction synthesis working group","PIs: T. Poisot (Université de Montréal) and L.J. Pollock, (McGill University)","Co-lead author of resulting publication", "2020",
+  "Network prediction synthesis working group","PIs: T. Poisot and L.J. Pollock",NA, "2020",
   #PFTC5
-  "Plant Functional Trait Course 5 in Peru","PIs: V. Vandvik (University of Bergen) and B.J. Enquist, (University of Arizona)","Plant functional responses to fire", "2020") %>%
+  "Plant Functional Trait Course 5 in Peru","PIs: V. Vandvik and B.J. Enquist)",NA, "2020") %>%
   detailed_entries(with=Project, why=Description, when=Year, what = Supervisor)
 
 
