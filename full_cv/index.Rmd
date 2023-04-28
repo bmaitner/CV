@@ -180,13 +180,15 @@ tribble(
 ```
 
 \vspace{\baselineskip}
-## **Short Presentations**
+## **Short Presentations and Posters**
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
 tribble(
   ~ Title, ~ Year, ~ Conference, ~ Who,
   "Reconstructing food webs using transfer learning", "Aug., 2021", "CSEE-SCEE Annual Meeting", "\\textbf{Tanya Strydom}, Salomé Bouskila and Timothée Poisot",
+  #QCBS POSTER
+  "Food web reconstruction using transfer learning", "Dec., 2021", "12th Annual QCBS Symposium", "\\textbf{Tanya Strydom}, Salomé Bouskila and Timothée Poisot",
 ) %>%
   detailed_entries(with=Title, when=Year, what=Who, where=Conference,
     .protect = FALSE)
