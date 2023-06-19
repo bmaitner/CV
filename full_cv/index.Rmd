@@ -144,7 +144,9 @@ tribble(
 
 # Publications
 
-\textsuperscript{*} Indicates co-lead author
+\textbf{\textsuperscript{*}} Indicates co-lead author
+
+\textsuperscript{\clubsuit} Winner of the 2022 Robert May Prize
 
 \vspace{\baselineskip}
 ## **Publications**
