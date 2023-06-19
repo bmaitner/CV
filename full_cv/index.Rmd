@@ -31,10 +31,10 @@ knit: (function(inputFile, encoding) {
     output_file = "cv",
      encoding = encoding)
      })
-bibliography_journals: "../bib/journal.bib"
-bibliography_review: "../bib/under_review.bib"
-bibliography_popular: "../bib/popular_articles.bib"
-bibliography_prep: "../bib/in_prep.bib"
+bibliography:
+  journals: "../bib/journal.bib"
+  review: "../bib/under_review.bib"
+  popular: "../bib/popular_articles.bib"
 header-includes:
   - \usepackage{fontawesome5}
 ---
@@ -103,6 +103,24 @@ tribble(
 
 ```
 
+# Funding and Awards
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
+
+tribble(
+  ~Institution, ~Award, ~Year,
+    'Awarded by: British Ecological Society',  "Robert May Prize", "2022",
+  'Awarded by: University of Pretoria',  "Qualified for the UP Postgraduate Masters Research Bursary", "2018",
+  'Awarded by: University of Pretoria',  "Awarded the 3rd year Undergraduate Mentorship Bursary", "2016",
+) %>%
+  detailed_entries(
+    what = Institution,
+    with = Award,
+    when = Year
+  )
+
+```
+
 # Working Groups and International Collaboration
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
@@ -130,25 +148,19 @@ tribble(
 
 \vspace{\baselineskip}
 ## **Publications**
-\begingroup
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
 
-::: {#refs_journals}
+::: {#refs-journals}
 :::
-\endgroup
+
 \vspace{\baselineskip}
 ## **Preprints**
 
-\begingroup
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
-
-::: {#refs_review}
+::: {#refs-review}
 :::
-\endgroup
 
+<!--- 
 \newpage
+--->
 
 # Presentations
 \vspace{\baselineskip}
@@ -248,29 +260,7 @@ tribble(
 \vspace{\baselineskip}
 ## **Popular Articles**
 
-\begingroup
-\setlength{\parindent}{-0.5in}
-\setlength{\leftskip}{0.5in}
-
-::: {#refs_popular}
+::: {#refs-popular}
 :::
-\endgroup
-
-# Funding and Awards
-
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
-
-tribble(
-  ~Institution, ~Award, ~Year,
-  'Awarded by: University of Pretoria',  "Qualified for the UP Postgraduate Masters Research Bursary", "2018",
-  'Awarded by: University of Pretoria',  "Awarded the 3rd year Undergraduate Mentorship Bursary", "2016"
-) %>%
-  detailed_entries(
-    what = Institution,
-    with = Award,
-    when = Year
-  )
-
-```
 
 <!--chapter:end:CV.Rmd-->
