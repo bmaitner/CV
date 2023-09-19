@@ -1,36 +1,25 @@
 ---
 #citeproc: no
-graphics: yes
-name: Tanya
-surname: Strydom
-#headcolor: 414141
-#qualifications: "BSc. (Hons), MSc."
-position: "PhD Candidate"
-address: "Département de sciences biologiques, Université de Montréal - Campus MIL, 1375 Ave.Thérèse-Lavoie-Roux, Montréal, QC H2V 0B3, Canada"
+graphics: no
+name: Brian S.
+surname: Maitner
+headcolor: FF10F0
+qualifications: "PhD"
+position: "Postdoctoral Researcher"
+address: "Department of Geography, Department of Environment and Sustainability, University at Buffalo, Buffalo, New York, USA"
 #phone: +46 76 567 8299
-profilepic: LogoNetwork.png
-www: "tanyadoesscience.com"
-email: "tanya.strydom@umontreal.ca"
-twitter: TanyaS08
-github: TanyaS08
-orcid: 0000-0001-6067-1349
-#publons: ABH-3144-2020
-#googlescholar: AkDd5u8AAAAJ
-#researchgate: Tanya-Strydom
+#profilepic: LogoNetwork.png
+#www: ""
+email: "bmaitner@gmail.com"
+twitter: BrianMaitner
+github: bmaitner
+orcid: 0000-0002-2118-9880
+#googlescholar: GVb9deIAAAAJ
+researchgate: Brian-Maitner
 #aboutme: |
 date: "`r format(Sys.time(), '%B %Y')`"
 csl: "../csl/apa7-cv.csl"
 nocite: "@*"
-headcolor: 529FA8 # use love symbol #2
-knit: (function(inputFile, encoding) {
-     rmarkdown::render(inputFile,
-    output_file = "cv",
-     encoding = encoding,
-     output_dir = "~/Documents/TanyaDoesScience/static/files");
-     rmarkdown::render(inputFile,
-    output_file = "cv",
-     encoding = encoding)
-     })
 bibliography:
   journals: "../bib/journal.bib"
   review: "../bib/under_review.bib"
