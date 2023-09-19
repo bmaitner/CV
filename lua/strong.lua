@@ -2,9 +2,9 @@ function Block (el)
   if el.t == "Para" or el.t == "Plain" then
     for k,_ in ipairs(el.content) do
 
-      if el.content[k].t == "Mai" and el.content[k].text == "Maitner,"
+      if el.content[k].t == "Str" and el.content[k].text == "Maitner,"
       and el.content[k+1].t == "Space"
-      and el.content[k+2].t == "Mai" and el.content[k+2].text:find("^B.S.") then
+      and el.content[k+2].t == "Str" and el.content[k+2].text:find("^B.S.") then
 
           local _,e = el.content[k+2].text:find("^T.")
           local rest = el.content[k+2].text:sub(e+1)  -- empty if e+1>length
@@ -13,9 +13,9 @@ function Block (el)
           table.remove(el.content, k+2)  -- safe? another way would be to set element k+2 to Str("")
           -- no real need to skip ipairs items here
 
-      elseif el.content[k].t == "Mai" and el.content[k].text == "Maitner*,"
+      elseif el.content[k].t == "Str" and el.content[k].text == "Maitner*,"
       and el.content[k+1].t == "Space"
-      and el.content[k+2].t == "Mai" and el.content[k+2].text:find("^B.S.") then
+      and el.content[k+2].t == "Str" and el.content[k+2].text:find("^B.S.") then
 
           local _,e = el.content[k+2].text:find("^T.")
           local rest = el.content[k+2].text:sub(e+1)  -- empty if e+1>length
