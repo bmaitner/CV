@@ -5,16 +5,17 @@ name: Brian S.
 surname: Maitner
 headcolor: FF10F0
 qualifications: "PhD"
+#pronouns: he/him/his
 position: "Postdoctoral Researcher"
 address: "Department of Geography, Department of Environment and Sustainability, University at Buffalo, Buffalo, New York, USA"
-#phone: +46 76 567 8299
+phone: +1 (616) 856 0780
 #profilepic: LogoNetwork.png
 #www: ""
 email: "bmaitner@gmail.com"
 twitter: BrianMaitner
 github: bmaitner
 orcid: 0000-0002-2118-9880
-#googlescholar: GVb9deIAAAAJ
+googlescholar: GVb9deIAAAAJ
 researchgate: Brian-Maitner
 #aboutme: |
 date: "`r format(Sys.time(), '%B %Y')`"
@@ -48,7 +49,24 @@ library(fontawesome)
 
 # Research Interests
 
-computational ecology; functional traits; ecological networks; species interactions; FAIR and open science
+Biodiversity; global change; community assembly; coexistence; community phylogenetics; behavioral ecology; community ecology; tropical ecology; invasion biology; biogeography; niche conservatism; trait-based ecology; data science; geospatial analyses; ecoinformatics; R
+
+# Professional Experience
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
+
+tribble(
+  ~ Position, ~Additional, ~ Year, ~ Institution, ~ Where,
+  "Postdoctoral Scholar","Research focused on developing workflows to inform land managers in the Cape Floristic Region of South Africa of potential changes in vegetation (e.g. fires, droughts, invasive species, illegal land clearing).", "2021-present", "University of Buffalo", "Buffalo, NY, USA",
+    "Postdoctoral Scholar","The workflow utilized remote sensing data, hierarchical Bayesian modeling to predict NDVI over time and detect deviations, and machine learning for classifying deviation from expectations into land change categories.", "2021-present", "University of Buffalo", "Buffalo, NY, USA",
+  "Terrestrial sampling stratification designer","As part of NASA’s first biodiversity-focused program, BIOSCAPE (https://www.bioscape.io/ ), I led the selection of the terrestrial sites that would be used by BIOSCAPE.", "2022-present", "BIOSCAPE", NA,
+  "Terrestrial sampling stratification designer","Sites were selected by analyzing and synthesizing multiple environmental variables to ensure sites were representative while also being compatible with project logistics and goals (e.g., near roads, publicly accessible, small slope, etc.)", "2022-present", "BIOSCAPE", NA,
+  "Postdoctoral Scholar","Research focused on using unsupervised clustering algorithms to conduct novel delineations of global ecoregions on the basis of global plant distribution models, assessing their conservation status, and projecting future changes.", "2020-2021", "University of Connecticut", "Storrs, CT, USA"
+) %>%
+  detailed_entries(with=Position, when=Year, what=Institution, where=Where, why=Additional,
+                   .protect = FALSE)
+
+```
 
 # Education
 
@@ -56,43 +74,34 @@ computational ecology; functional traits; ecological networks; species interacti
 library(tibble)
 tribble(
   ~ Degree, ~Advisor, ~ Year, ~ Institution, ~ Where,
-  "Doctor of Philosophy: Biological Sciences","Advisor: T. Poisot, PhD", "2020 - Present", "Université de Montréal", "Montréal, Canada",
-  "Doctor of Philosophy: Biological Sciences","Thesis: Decoding Ecological Networks (in terms of the information from within)", "2020 - Present", "Université de Montréal", "Montréal, Canada",
-  "Master of Science: Ecology and Biodiversity","Advisor: K. Hylander, PhD", "2018-20", "Stockholms Universitet", "Stockholm, Sweden",
-  "Master of Science: Ecology and Biodiversity","Thesis: Declines and increases in northern and southern plant populations after changes in the microclimate", "2018-20", "Stockholms Universitet", "Stockholm, Sweden",
-  "Bachelor of Science (Honours): Plant Sciences","Advisor: P.C. le Roux, PhD", "2017", "University of Pretoria", "Pretoria, South Africa",
-  "Bachelor of Science (Honours): Plant Sciences","Thesis: Bush encroachment in South Africa’s montane grasslands: the impact of \\textit{Leucosidea sericea} on microclimate and vegetation", "2017",
-"University of Pretoria", "Pretoria, South Africa",
-  "Bachelor of Science: Ecology", NA, "2014-16", "University of Pretoria", "Pretoria, South Africa"
+  "Doctor of Philosophy: Ecology and Evolutionary Biology","Advisor: B.J. Enquist, PhD", "2014-2020", "University of Arizona", "Tucson, AZ, USA",
+  "Doctor of Philosophy: Ecology and Evolutionary Biology","Thesis: Challenging current paradigms in communirt phylogenestics: Including source range phylogenetic structure and transforming pylogenetic branches to reflect trait evolution.", "2014-2020", "University of Arizona", "Tucson, AZ, USA",
+  "Master of Science: Ecology and Evolutionary Biology","Advisor: K. Hylander, PhD", "2009-2013", "Rice University", "Houston, TX, USA",
+  "Master of Science: Ecology and Evolutionary Biology","Thesis: Declines and increases in northern and southern plant populations after changes in the microclimate", "2009-2013", "Rice University", "Houston, TX, USA",
+  "Bachelor of Science: Zoology","High Honors", "2004-2006", "Michigan State University", "East Lansing, MI, USA",
+  "Bachelor of Science: Zoology","Concentrations in General Zoology and Ecology, Evolution, and Organismal Biology", "2004-2006", "Michigan State University", "East Lansing, MI, USA",
+  "Bachelor of Science: Ecology", NA, "2001-2004", "Grand Rapids Community College", "Grand Rapids, MI, USA"
 ) %>%
   detailed_entries(with=Degree, when=Year, what=Institution, where=Where, why=Advisor,
                    .protect = FALSE)
 ```
 
-# Fellowships and Internships
+# Additional Education and Relevant Travel
 
-```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
-
+```{r, echo=FALSE, message = FALSE, warning = FALSE}
 tribble(
-  ~Institution, ~Title, ~Year, ~Job,
-    
-  'Computational Biodiversity Science and Services  (BIOS\\textsuperscript{2}) training program',  "BIOS\\textsuperscript{2} Fellow", "2021 - present", NA,
-  # LIVING DATA
-  "Canadian Institute of Ecology and Evolution, Birds Canada", "Living Data Internship", "2022", "Data archiving for the Piping Plovers conservation pjoject",
-  'University of Bergen',  "UiB Internship", "2020", "Website development for the Plants Functional Courses website. This included content creation as well as some front end development",
-  'University of Pretoria',  "3rd year Undergraduate Mentorship Program", "2016", "Worked as an assistant within the M. Robertson lab. This included the sorting and identification of pitfall trap samples as well as extracting information from databases"
-) %>%
-  detailed_entries(
-    what = Institution,
-    with = Title,
-    when = Year,
-    why = Job,
-    .protect = FALSE
-  )
+  ~ Project, ~Supervisor, ~Description,  ~ Year,
+  "iDiv Summer School",NA,"German Centre for Integrative Biodiversity Research", "2017",
+  "Computation Ecology Summer School",NA,"University of Montreal", "2016",
+  "Biomedical Responsible Conduct of Research, Basic Course",NA, "Collaborative Institutional Training Initiative", "2012",
+  "Species Distribution Modeling Training Course",NA,"American Museum of Natural History", "2011",
+  "Studies in Natural History: Costa Rica",NA,"Grand Rapids Community College", "2003 & 2004",
+  "Studies in Natural History: Canada",NA,"Grand Rapids Community College", "2003") %>%
+  detailed_entries(with=Project, what=Description, when=Year,why = Supervisor)
 
 ```
 
-# Funding and Awards
+# Funding
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE}
 
@@ -110,32 +119,16 @@ tribble(
 
 ```
 
-# Working Groups and International Collaboration
-
-```{r, echo=FALSE, message = FALSE, warning = FALSE}
-tribble(
-  ~ Project, ~Supervisor, ~Description,  ~ Year,
-  # Macro-Micro
-  "Black Holes and Revelations: Identifying Priority Sampling Locations for Local Food Webs in Canada","PIs: G. Dansereau, F. Banville, M. Catchen, and T. Strydom",NA, "2022",
-  # Macro-Micro
-  "Merging Statistical Theory and Analyses at the Interface of Microbial and ‘Macrobial’ Ecology","PIs: M. Liebold, P. Peres-Neto, and E. Thebault ",NA, "2022",
-  # CAN metaweb
-  "Canadian metaweb construction working group","PIs: T. Poisot and L.J. Pollock",NA, "2021",
-  # Network pred synth
-  "Network prediction synthesis working group","PIs: T. Poisot and L.J. Pollock",NA, "2020",
-  #PFTC5
-  "Plant Functional Trait Course 5 in Peru","PIs: V. Vandvik and B.J. Enquist",NA, "2020") %>%
-  detailed_entries(with=Project, why=Description, when=Year, what = Supervisor)
-
-
-```
-
-
 # Publications
 
+<!--- 
 \textbf{\textsuperscript{*}} Indicates co-lead author
 
-\textsuperscript{\clubsuit} Winner of the 2022 Robert May Prize
+\vspace{\baselineskip}
+## **Preprints**
+
+::: {#refs-review}
+:::
 
 \vspace{\baselineskip}
 ## **Publications**
@@ -144,14 +137,15 @@ tribble(
 :::
 
 \vspace{\baselineskip}
-## **Preprints**
+## **Software Packages**
 
-::: {#refs-review}
+::: {#refs-journals}
 :::
 
 <!--- 
 \newpage
 --->
+
 
 # Presentations
 \vspace{\baselineskip}
@@ -200,7 +194,7 @@ tribble(
 ```
 
 \vspace{\baselineskip}
-## **Workshops and Organised Sessions**
+## **Workshops and Organized Sessions**
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
@@ -214,24 +208,66 @@ tribble(
 
 ```
 
-<!--- 
-# Teaching
-\vspace{\baselineskip}
-## **Workshops**
+\newpage
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, results='asis'}
+# Referee Duties
+
+Acta Oecologica; American Journal of Botany; Annals of Botany; Biodiversity and Conservation; Biological Conservation; Biotropica; Diversity and Distributions; Ecography; Ecology; Ecological Informatics; Ecology Letters; Frontiers of Biogeography; Global Ecology and Biogeography; iScience; Journal of Biogeography; Journal of Ecology; Journal of Vegetation Science; Journal of the Arkansas Academy of Science; Methods in Ecology and Evolution; Nature Communications; New Phytologist; Philosophical Transactions of the Royal Society B; PLOS ONE; Science of the Total Environment; Scientific Reports.
+
+
+# Fellowships and Grants
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
 tribble(
-  ~ Title, ~Points, ~ Year, ~ Conference, ~ Where,
-  "(un)Reproducibility Detox - Package and Dependency Management","Gracielle Higino, Andrew MacDonald, \\textbf{Tanya Strydom}", "Nov., 2021", "BIOS$^2$", "Virtual"
+  ~Institution, ~Title, ~Year, ~Job,
+    
+  'Computational Biodiversity Science and Services  (BIOS\\textsuperscript{2}) training program',  "BIOS\\textsuperscript{2} Fellow", "2021 - present", NA,
+  # LIVING DATA
+  "Canadian Institute of Ecology and Evolution, Birds Canada", "Living Data Internship", "2022", "Data archiving for the Piping Plovers conservation project",
+  'University of Bergen',  "UiB Internship", "2020", "Website development for the Plants Functional Courses website. This included content creation as well as some front end development",
+  'University of Pretoria',  "3rd year Undergraduate Mentorship Program", "2016", "Worked as an assistant within the M. Robertson lab. This included the sorting and identification of pitfall trap samples as well as extracting information from databases"
 ) %>%
-  detailed_entries(with=Title, when=Year, what=Conference, where=Where, why=Points,
-    .protect = FALSE)
+  detailed_entries(
+    what = Institution,
+    with = Title,
+    when = Year,
+    why = Job,
+    .protect = FALSE
+  )
 
 ```
 
---->
-\newpage
+
+# Awards
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
+
+tribble(
+  ~Institution, ~Title, ~Year, ~Job,
+    
+  'Computational Biodiversity Science and Services  (BIOS\\textsuperscript{2}) training program',  "BIOS\\textsuperscript{2} Fellow", "2021 - present", NA,
+  # LIVING DATA
+  "Canadian Institute of Ecology and Evolution, Birds Canada", "Living Data Internship", "2022", "Data archiving for the Piping Plovers conservation project",
+  'University of Bergen',  "UiB Internship", "2020", "Website development for the Plants Functional Courses website. This included content creation as well as some front end development",
+  'University of Pretoria',  "3rd year Undergraduate Mentorship Program", "2016", "Worked as an assistant within the M. Robertson lab. This included the sorting and identification of pitfall trap samples as well as extracting information from databases"
+) %>%
+  detailed_entries(
+    what = Institution,
+    with = Title,
+    when = Year,
+    why = Job,
+    .protect = FALSE
+  )
+
+```
+
+
+
+
+# Teaching Experience
+
+# Service/Outreach
 
 # Community Engagement
 \vspace{\baselineskip}
@@ -253,7 +289,9 @@ tribble(
 \vspace{\baselineskip}
 ## **Popular Articles**
 
+<!--- 
 ::: {#refs-popular}
 :::
+--->
 
 <!--chapter:end:CV.Rmd-->
