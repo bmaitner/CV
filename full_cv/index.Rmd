@@ -155,9 +155,7 @@ tribble(
 
 tribble(
   ~ Title, ~ Year, ~ Conference, ~ Who,
-    "What's [complexity] got to do with it?","Jul., 2023", "NetSci 2023", "\\textbf{Tanya Strydom}",
-  "Making something out of nothing at all: Transfer learning for network prediction","Apr., 2022", "ML4MS mini-conference", "\\textbf{Tanya Strydom}",
- "Taking FAIR and open science to the field: The evolution of the PFTC field course","Oct., 2020", "Living Norway Colloquium", "\\textbf{Tanya Strydom} alongside Aud H. Halbritter, 109 PFTC Participants",
+ "Phylogenetic relationships and community assembly.","2011", "Grand Rapids Community College", "\\textbf{Maitner, B.S.}",
 ) %>%
   detailed_entries(with=Title, when=Year, what=Who, where=Conference,
     .protect = FALSE)
@@ -170,7 +168,10 @@ tribble(
 
 tribble(
   ~ Title, ~ Year, ~ Conference, ~ Who,
-  "Exploring the complexity of ecological networks using SVD entropy", "Dec., 2020", "11th Annual QCBS Symposium", "\\textbf{Tanya Strydom}, Giulio V. Dalla Riva and Timothée Poisot",
+  "The Ecosystem Monitoring and Management Application (EMMA) Workflow: Automating Change Detection and Reporting in the Hyperdiverse Fynbos of South Africa.", "2022", "American Geophysical Union Conference", "\\textbf{Maitner, B.S.}, Slingsby, J., Moncrieff, G.R., Hu, Y., Ma, Y., Wilson, A.",
+  "Forecasting vegetation dynamics in an open ecosystem by integrating deep learning and environmental variables.", "2022", "American Geophysical Union Conference", "Hu, Y., Ma, Y., Moncrieff, G.R., Slingsby, J., Wilson, A., \\textbf{Maitner, B.S.}, Zhenqi, R.Z. ",
+  "BioFI - The Biodiversity Forecasting Initiative to Understand Population, Community, and Ecosystem Function Under Climate Change.", "2022", "American Geophysical Union Conference", "Enquist, B.J., Merow, C., Nikolopoulos, E., Frazier, A., Duncanson, L., Anagnostou, E., Boyle, B., Breshears, D.D., Ernst, K.C., Foden, W., Gallagher, R.V., Klausmeier, C.A., Litchman, E., Norberg, J., Marquet, P.A., \\textbf{Maitner, B.S.}, Midgley, G., Pascual, M., Rominger, A., Savage, V., Silander, J., Slingsby, J., Svenning, J.C., Wilson, A., Dietze, M., Cavender-Bares, J., Roehrdanz, P., Hannah, L..",
+  "Forecasting future global biodiversity: Predicting current and future global plant distributions, community structure, and ecosystem function.", "2019", "American Geophysical Union Conference", "\\textbf{Maitner, B.S.}"
 ) %>%
   detailed_entries(with=Title, when=Year, what=Who, where=Conference,
     .protect = FALSE)
@@ -184,9 +185,14 @@ tribble(
 
 tribble(
   ~ Title, ~ Year, ~ Conference, ~ Who,
-  "Reconstructing food webs using transfer learning", "Aug., 2021", "CSEE-SCEE Annual Meeting", "\\textbf{Tanya Strydom}, Salomé Bouskila and Timothée Poisot",
-  #QCBS POSTER
-  "Food web reconstruction using transfer learning", "Dec., 2021", "12th Annual QCBS Symposium", "\\textbf{Tanya Strydom}, Salomé Bouskila and Timothée Poisot",
+  "Phylogenetic scaling and community phylogenetic patterns.", "2018", "Ecological Society of America Conference", "\\textbf{Maitner, B.S.}, Enquist, B.J.",
+  "Evolutionary imbalance dominates phylogenetic patterns in successful bird introductions.", "2018", "Ecological Society of America Conference", "\\textbf{Maitner, B.S.}, Dlugosch, K.M, Enquist, B.J.",
+  "Quantifying species tolerances and functional diversity using n-dimensional hypervolumes: a comparison of methods.", "2017", "International Biogeography Society Conference", "Morrow, C. B., Blonder, B., \\textbf{Maitner, B.S.}, Lamanna, C., Kerkhoff, D., Enquist, B.J.",
+  "Comparative community phylogenetics.", "2016", "Gordon Conference: Unifying Ecology Across Scales", "\\textbf{Maitner, B.S.}, Enquist, B.J.",
+  "Phylogenetic diversity-area relationships reveal macroecological patterns.", "2015", "Ecological Society of America Conference", "\\textbf{Maitner, B.S.}, Morlon, H., Enquist, B.J.",
+  "Are mountain passes higher in the tropics? A community phylogenetic approach.", "2012", "Ecological Society of America Conference", "Roy, C.L., \\textbf{Maitner, B.S.}, Dunham, A.E.",
+  "Nest Defense and Parental Investment in the House Wren.", "2012", "Wilson Ornithological Society Conference", "Fox, K., Caffarelli A., Walters L., \\textbf{Maitner, B.S.}",
+  " Phylogenetic distance and bird invasions.", "2010", "Ecological Society of America Conference", "\\textbf{Maitner, B.S.} Rudgers J.A., Dunham A.E., Whitney K.D."
 ) %>%
   detailed_entries(with=Title, when=Year, what=Who, where=Conference,
     .protect = FALSE)
@@ -200,15 +206,13 @@ tribble(
 
 tribble(
   ~ Title, ~ Year, ~ Conference, ~ Who,
-  "Space Oddity: Thinking About Ecological Networks Across Space", "Aug., 2022", "ESA/CSEE Meeting","Francis Banville, Gabriel Dansereau, \\textbf{Tanya Strydom}",
-  "Designing a collective prototype of future tropical and subtropical science", "Jul., 2021", "ATBC Annual Meeting","Gracielle Higino, Mickey Boakye, Norma Forero, \\textbf{Tanya Strydom}"
+  "Open data in the life sciences: Challenges and Opportunities.", "2017", "OpenCon",NA,
+  "Integrating and cleaning biodiversity data: Workflows to model ranges and merge associated ecological, phylogenetic, and trait information.", "2017", "International Biogeography Society Conference",NA
 ) %>%
   detailed_entries(with=Title, when=Year, what=Who, where=Conference,
     .protect = FALSE)
 
 ```
-
-\newpage
 
 # Referee Duties
 
@@ -220,19 +224,19 @@ Acta Oecologica; American Journal of Botany; Annals of Botany; Biodiversity and 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
 tribble(
-  ~Institution, ~Title, ~Year, ~Job,
-    
-  'Computational Biodiversity Science and Services  (BIOS\\textsuperscript{2}) training program',  "BIOS\\textsuperscript{2} Fellow", "2021 - present", NA,
-  # LIVING DATA
-  "Canadian Institute of Ecology and Evolution, Birds Canada", "Living Data Internship", "2022", "Data archiving for the Piping Plovers conservation project",
-  'University of Bergen',  "UiB Internship", "2020", "Website development for the Plants Functional Courses website. This included content creation as well as some front end development",
-  'University of Pretoria',  "3rd year Undergraduate Mentorship Program", "2016", "Worked as an assistant within the M. Robertson lab. This included the sorting and identification of pitfall trap samples as well as extracting information from databases"
+  ~Institution, ~Title, ~Year, 
+  'University of Arizona',  "Galileo Circle Scholarship", "2019-2020",
+  "University of Arizona", "William A. Calder III Memorial Scholarship", "2019",
+  'University of Bergen',  "TransPlant Fellowship", "2019",
+  'University of Arizona',  "Data Science Ambassadorship", "2018",
+  'University of Arizona', "Libraries’ scholarship to attend OpenCo", "2017",
+  'Rice University', "Graduate fellowship", "2009-2013",
+  'Rice University', "Rice Centennial Award to Support Undergraduate Research", "2012"
 ) %>%
   detailed_entries(
     what = Institution,
     with = Title,
     when = Year,
-    why = Job,
     .protect = FALSE
   )
 
@@ -244,28 +248,56 @@ tribble(
 ```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
 tribble(
-  ~Institution, ~Title, ~Year, ~Job,
+  ~Institution, ~Title, ~Year,
     
-  'Computational Biodiversity Science and Services  (BIOS\\textsuperscript{2}) training program',  "BIOS\\textsuperscript{2} Fellow", "2021 - present", NA,
-  # LIVING DATA
-  "Canadian Institute of Ecology and Evolution, Birds Canada", "Living Data Internship", "2022", "Data archiving for the Piping Plovers conservation project",
-  'University of Bergen',  "UiB Internship", "2020", "Website development for the Plants Functional Courses website. This included content creation as well as some front end development",
-  'University of Pretoria',  "3rd year Undergraduate Mentorship Program", "2016", "Worked as an assistant within the M. Robertson lab. This included the sorting and identification of pitfall trap samples as well as extracting information from databases"
+  'Ecography',  "E4 Award (nominated)", "2021",
+  "University of Arizona", "Graduate Award for Outstanding Teaching", "2020",
+  'Global Biodiversity Information Facility',  "Ebbe Nielsen Challenge (Second place)", "2019",
+  'Rice University',  "Award for Best Graduate Paper", "2012-2013",
+  'Rice University',  "Peter Savvas Nelson Award", "2012-2013",
+  'Rice University',  "Joe Davies Prize for Outstanding Service as a Teaching Assistant", "2009-2010",
+  'Michigan State University',  "Dean's list", "2004-2006",
+  'Grand Rapids Community College',  "Foundation Scholarship", "2004-2005",
+  NA,  "Hansen Environmental Scholarship", "2004",
+  "Grand Rapids Community College",  "Biology Student of the Year (nominated)", "2004",
+  'Grand Rapids Community College',  "Dean's list", "2002-2004",
+  NA,  "Michigan Merit Award", "2002"
 ) %>%
   detailed_entries(
     what = Institution,
     with = Title,
     when = Year,
-    why = Job,
     .protect = FALSE
   )
 
 ```
 
-
-
-
 # Teaching Experience
+
+```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
+
+tribble(
+  ~Institution, ~Title, ~Year, ~Job,
+    
+  'University of Arizona',  "Introduction to Agent Based and Individual Based Models (ECOL596W)", "2019", "Proposed, designed and implemented course",
+  'University of Arizona',  "Adaptive Evolution and Biodiversity Lab (BIO 182L)", "2018-2019", "Instructor",
+  'University of Arizona',  "Adaptive Evolution and Biodiversity Lab (BIO 182L)", "2015-2016", "Instructor",
+  'Rice University',  "Scientific Communication (EBIO 412)", "2012", "Teaching Assistant",
+  'Rice University',  "Biological Diversity Lab (EBIO 327)", "2011", "Teaching Assistant",
+  'Rice University',  "Animal Behavior (EBIO 321)", "2010-2011", "Teaching Assistant",
+  'Rice University',  "Conservation Biology (EBIO 323)", "2010", "Teaching Assistant"
+) %>%
+  detailed_entries(
+    where = Institution,
+    with = Title,
+    when = Year,
+    what = Job,
+    .protect = FALSE
+  )
+
+```
+
+# Student Mentorship
 
 # Service/Outreach
 
