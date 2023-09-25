@@ -19,12 +19,10 @@ googlescholar: GVb9deIAAAAJ
 researchgate: Brian-Maitner
 #aboutme: |
 date: "`r format(Sys.time(), '%B %Y')`"
-csl: "../csl/apa7-cv.csl"
 nocite: "@*"
 bibliography:
   journals: "../bib/journal.bib"
   review: "../bib/under_review.bib"
-  popular: "../bib/popular_articles.bib"
 header-includes:
   - \usepackage{fontawesome5}
 ---
@@ -121,8 +119,6 @@ tribble(
 
 # Publications
 
-<!--- 
-\textbf{\textsuperscript{*}} Indicates co-lead author
 
 \vspace{\baselineskip}
 ## **Preprints**
@@ -142,7 +138,7 @@ tribble(
 ::: {#refs-journals}
 :::
 
-<!--- 
+<!---
 \newpage
 --->
 
@@ -206,6 +202,9 @@ tribble(
 
 tribble(
   ~ Title, ~ Year, ~ Conference, ~ Who,
+  "Introduction to R and data reproducibility", "2019", " Association for Fire Ecology",NA,
+  "Data analysis and visualisation", "2019", " Association for Fire Ecology",NA,
+  "Geospatial Carpentry Workshop", "2018", "University of Arizona",NA,
   "Open data in the life sciences: Challenges and Opportunities.", "2017", "OpenCon",NA,
   "Integrating and cleaning biodiversity data: Workflows to model ranges and merge associated ecological, phylogenetic, and trait information.", "2017", "International Biogeography Society Conference",NA
 ) %>%
@@ -299,31 +298,46 @@ tribble(
 
 # Student Mentorship
 
-# Service/Outreach
+```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
-# Community Engagement
-\vspace{\baselineskip}
-## **Science Communication**
+tribble(
+  ~Institution, ~Title, ~Year, ~Job,
+    
+  'Universidad Nacional de San Antonio Abad del Cusco',  "Paul Efren Santos Andrade", "2022", NA,
+  'Kenyon College',  "Cecina Babich Morrow", "2016", NA,
+  'Rice University',  "Molly Cisneros", "2012", "Independent Study for EEB Undergraduates",
+  'Rice University',  "Curtis Feronti", "2012", "Independent Study for EEB Undergraduates",
+  'Rice University',  "Hannah Walchak", "2012", "Independent Study for EEB Undergraduates",
+  NA,  "Christina Loos", "2012", "High School Student Volunteer",
+  'Rice University',  "Molly Cisneros", "2011", "Independent Study for EEB Undergraduates",
+  'Rice University',  "Curtis Feronti", "2011", "Independent Study for EEB Undergraduates",
+  'Rice University',  "Katelyn Grey", "2010", "Independent Study for EEB Undergraduates",
+  'Rice University',  "Shaina Rasmussen", "2010", "Independent Study for EEB Undergraduates"
+) %>%
+  detailed_entries(
+    what = Institution,
+    why =Title,
+    with = Year,
+    #what = Job,
+    .protect = FALSE
+  )
+
+```
+
+# Service/Outreach
 
 ```{r, echo=FALSE, message = FALSE, warning = FALSE, results='asis'}
 
 tribble(
-  ~Institution, ~Title, ~Year,
-  "Fortnightly cartoonist for Ecology for the Masses blog",  "Cartoonist", "2020 - 2022",
+  ~ Position, ~Additional, ~ Year, ~ Institution,
+  "Founding member of the Open Traits Network", NA, NA, NA,
+  "Open Traits content editor", NA, "2019 - present", NA,
+    "Taught and organized the first EEB high school summer internship program",NA, "2013", "Rice University",
+  "President (elected) Ecology and Evolutionary Biology Graduate Student Association",NA, "2010-2013", "Rice University",
+  "Facilitated presentation by undergraduates at local high school students","Scientific Communication Students", "2010-2012", "Rice University",
+  "Facilitated presentation by undergraduates at local high school students","Conservation Biology Students", "2010-2012", "Rice University"
 ) %>%
-  detailed_entries(
-    what = Institution,
-    with = Title,
-    when = Year
-  )
+  detailed_entries(with=Position, when=Year, what=Institution, why=Additional,
+                   .protect = FALSE)
 
 ```
-\vspace{\baselineskip}
-## **Popular Articles**
-
-<!--- 
-::: {#refs-popular}
-:::
---->
-
-<!--chapter:end:CV.Rmd-->
